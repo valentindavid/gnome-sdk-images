@@ -271,10 +271,9 @@
                             "--with-included-loaders=png,jpeg" ],
             "sources": [
                 {
-                    /* TODO: update to 2.34 when released */
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.33/gdk-pixbuf-2.33.2.tar.xz",
-                    "sha256": "d91ec3ab7d0fcf998d2c38b6725655666e0767e2c462598aea003caee2455929"
+                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.34/gdk-pixbuf-2.34.0.tar.xz",
+                    "sha256": "d55e5b383ee219bd0e23bf6ed4427d56a7db5379729a6e3e0a0e0eba9a8d8879"
                 }
             ]
         },
@@ -678,15 +677,14 @@
             ]
         },
         {
-            /* TODO: Update to 3.20 when released */
             "name": "gcr",
             "cleanup": [ "/share/GConf" ],
             "cleanup-platform": [ "/libexec", "/bin", "/share/applications", "/share/dbus-1/services" ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gcr/3.19/gcr-3.19.4.tar.xz",
-                    "sha256": "e4416664a4b781f18ee07f0124a2b1bd51436d7064bd94f980eede69e40caf30"
+                    "url": "https://download.gnome.org/sources/gcr/3.20/gcr-3.20.0.tar.xz",
+                    "sha256": "90572c626d8a708225560c42b4421f7941315247fa1679d4ef569bde7f4bb379"
                 },
                 {
                     "type": "shell",
