@@ -227,8 +227,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/pango/1.40/pango-1.40.0.tar.xz",
-                    "sha256": "da17985df314cb07d066ab5424f59c21ce973ece05b7de4df04d798ec8511c8b"
+                    "url": "https://download.gnome.org/sources/pango/1.40/pango-1.40.1.tar.xz",
+                    "sha256": "e27af54172c72b3ac6be53c9a4c67053e16c905e02addcf3a603ceb2005c1a40"
                 }
             ]
         },
@@ -325,8 +325,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk+/3.20/gtk+-3.20.2.tar.xz",
-                    "sha256": "1ab1d1068ea55e0046f437d69983f164df5e68cb2e9fdfb38787b867f33f69f7"
+                    "url": "https://download.gnome.org/sources/gtk+/3.20/gtk+-3.20.3.tar.xz",
+                    "sha256": "3834f3bf23b260b3e5ebfea41102e2026a8af29e36c3620edf4a5cf05e82f694"
                 }
             ]
         },
