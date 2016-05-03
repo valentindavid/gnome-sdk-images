@@ -418,6 +418,20 @@
         },
         {
             "name": "gstreamer-plugins-good",
+            "build-options" : {
+                "arch" : {
+                    "i386" : {
+                        "config-opts" : [
+                            "--build=i586-unknown-linux-gnu"
+                        ]
+                    },
+		    "arm" : {
+                        "config-opts" : [
+                            "--build=arm-unknown-linux-gnueabi"
+			]
+		    }
+                }
+            },
             "config-opts": ["--disable-gtk-doc", "--enable-experimental", "--enable-orc" ,
                             "--disable-monoscope",
                             "--disable-aalib",
@@ -435,6 +449,20 @@
         },
         {
             "name": "gstreamer-plugins-bad",
+            "build-options" : {
+                "arch" : {
+                    "i386" : {
+                        "config-opts" : [
+                            "--build=i586-unknown-linux-gnu"
+                        ]
+                    },
+		    "arm" : {
+                        "config-opts" : [
+                            "--build=arm-unknown-linux-gnueabi"
+			]
+		    }
+                }
+            },
             "config-opts": ["--disable-gtk-doc", "--enable-experimental", "--enable-orc" ],
             "sources": [
                 {
