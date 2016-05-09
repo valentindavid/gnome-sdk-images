@@ -7,7 +7,7 @@ ARCH   ?= $(shell xdg-app --default-arch)
 # SDK_RUNTIME_VERSION: The org.freedesktop.BaseSdk and platform version to build against
 #
 SDK_BRANCH=master
-SDK_RUNTIME_VERSION=1.4
+SDK_RUNTIME_VERSION=1.5
 
 # Canned recipe for generating metadata
 SUBST_FILES=org.gnome.Sdk.json metadata.sdk metadata.platform
