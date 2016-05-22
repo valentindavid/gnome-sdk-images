@@ -201,17 +201,6 @@
             ]
         },
         {
-            "name": "libdatrie",
-            "config-opts": ["--disable-static"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/pld-linux/libdatrie/archive/auto/th/libdatrie-0.2.9-1.tar.gz",
-                    "sha256": "f936762ed04420b9d31c62064fe2a802fe020e78db4dedc62f5dd16306eca6ed"
-                }
-            ]
-        },
-        {
             "name": "pango",
             "sources": [
                 {
