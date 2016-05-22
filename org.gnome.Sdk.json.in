@@ -207,7 +207,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/pld-linux/libdatrie/archive/auto/th/libdatrie-0.2.9-1.tar.gz",
-                    "sha256": "d980713e7ad8e19cf3b54ee0173782b94332af8e7e4e936dde01d2cd72e1da1d"
+                    "sha256": "f936762ed04420b9d31c62064fe2a802fe020e78db4dedc62f5dd16306eca6ed"
                 }
             ]
         },
