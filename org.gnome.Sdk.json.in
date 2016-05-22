@@ -210,19 +210,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://linux.thai.net/pub/thailinux/software/libthai/libdatrie-0.2.9.tar.xz",
+                    "url": "https://github.com/pld-linux/libdatrie/archive/auto/th/libdatrie-0.2.9-1.tar.gz",
                     "sha256": "d980713e7ad8e19cf3b54ee0173782b94332af8e7e4e936dde01d2cd72e1da1d"
-                }
-            ]
-        },
-        {
-            "name": "libthai",
-            "config-opts": ["--disable-static"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://linux.thai.net/pub/thailinux/software/libthai/libthai-0.1.22.tar.xz",
-                    "sha256": "bdb291dcc3a6784e86b1b342ec75005e9ab487f8c1decc7c3e7d18d1bbc9b7b7"
                 }
             ]
         },
