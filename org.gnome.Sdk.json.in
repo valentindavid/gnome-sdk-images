@@ -780,6 +780,20 @@
                     "commands": ["autoreconf -f"]
                 }
             ]
+        },
+        {
+            "name": "os-release",
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "os-release"
+                },
+                {
+                    "type": "file",
+                    "path": "os-release-configure",
+                    "dest-filename": "configure"
+                }
+            ]
         }
     ]
 }
