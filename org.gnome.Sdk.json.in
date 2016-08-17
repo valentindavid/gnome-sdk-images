@@ -411,6 +411,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.18.tar.xz",
                     "sha256": "0aec0d0c6020cd19a5bb0dab1165a92748f81a9a3acdfabb0f966d5f53bc8093"
+                },
+                {
+                    "type": "patch",
+                    "path": "clutter-gst-gi-build-fix.patch"
                 }
             ]
         },
