@@ -98,8 +98,8 @@
             "sources": [
                 {
                      "type": "archive",
-                     "url": "https://download.gnome.org/sources/glib/2.48/glib-2.48.0.tar.xz",
-                     "sha256": "744be6931ca914c68af98dc38ff6b0cf8381d65e335060faddfbf04c17147c34"
+                     "url": "https://download.gnome.org/sources/glib/2.48/glib-2.48.1.tar.xz",
+                     "sha256": "74411bff489cb2a3527bac743a51018841a56a4d896cc1e0d0d54f8166a14612"
                 }
             ]
         },
@@ -123,8 +123,8 @@
             "sources": [
                 {
                      "type": "archive",
-                     "url": "https://download.gnome.org/sources/glib-networking/2.48/glib-networking-2.48.0.tar.xz",
-                     "sha256": "7a1f3312e757b97af94e2db8a1f14eb9cc018c983931ecdf3b0c54acece39024"
+                     "url": "https://download.gnome.org/sources/glib-networking/2.48/glib-networking-2.48.2.tar.xz",
+                     "sha256": "925c0c49d6b2b8b5695f2e33cd952d1dbb7d18d3f2f796413577719315bb3a84"
                 }
             ]
         },
@@ -135,8 +135,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.32/vala-0.32.0.tar.xz",
-                    "sha256": "07a2aa4ede040789b4b5af817a42249d703bfe8affccb7732ca2b53d00c1fb6e"
+                    "url": "https://download.gnome.org/sources/vala/0.32/vala-0.32.1.tar.xz",
+                    "sha256": "dd0d47e548a34cfb1e4b04149acd082a86414c49057ffb79902eb9a508a161a9"
                 }
             ]
         },
@@ -325,8 +325,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk+/3.20/gtk+-3.20.6.tar.xz",
-                    "sha256": "3f8016563a96b1cfef4ac9e795647f6316deb2978ff939b19e4e4f8f936fa4b2"
+                    "url": "https://download.gnome.org/sources/gtk+/3.20/gtk+-3.20.8.tar.xz",
+                    "sha256": "9841bd9b4d23c045c474b10fdde9da958af904b63783701e796391d55d4396f3"
                 }
             ]
         },
@@ -689,8 +689,8 @@
 	    "sources": [
                 {
                     "type": "archive",
-                    "url": "http://www.webkitgtk.org/releases/webkitgtk-2.12.1.tar.xz",
-                    "sha256": "5b1a2d5227553f3cecbdb258c68b384f9235747b2c07c15afb555fe4fa6ae896"
+                    "url": "http://www.webkitgtk.org/releases/webkitgtk-2.12.3.tar.xz",
+                    "sha256": "173cbb9a2eca23eee52e99965483ab25aa9c0569ef5b57041fc0c129cc26c307"
                 },
                 {
                     "type": "patch",
