@@ -1,14 +1,13 @@
 diff --git a/clutter-gst/Makefile.am b/clutter-gst/Makefile.am
-index 0df17b3..ef501c1 100644
+index cac901f..dbc06b0 100644
 --- a/clutter-gst/Makefile.am
 +++ b/clutter-gst/Makefile.am
-@@ -67,17 +67,14 @@ libclutter_gst_@CLUTTER_GST_MAJORMINOR@_la_SOURCES =	\
+@@ -67,16 +67,14 @@ libclutter_gst_@CLUTTER_GST_MAJORMINOR@_la_SOURCES =	\
  	$(glib_enum_h)					\
  	$(NULL)
  
 -INCLUDES =					\
 -	-I$(top_srcdir)				\
--	-I$(top_builddir)			\
 -	$(NULL)
 -
  AM_CPPFLAGS =					\
@@ -22,7 +21,7 @@ index 0df17b3..ef501c1 100644
  	$(NULL)
  
  AM_CFLAGS = 				\
-@@ -140,11 +137,9 @@ BUILT_GIRSOURCES =
+@@ -139,11 +137,9 @@ BUILT_GIRSOURCES =
  ClutterGst-@CLUTTER_GST_API_VERSION@.gir: $(INTROSPECTION_SCANNER) libclutter-gst-@CLUTTER_GST_API_VERSION@.la
  	$(QUIET_GEN) \
  		GST_PLUGIN_SYSTEM_PATH_1_0="" GST_PLUGIN_PATH_1_0="" GST_REGISTRY_UPDATE=no DISPLAY="" \
@@ -35,7 +34,7 @@ index 0df17b3..ef501c1 100644
  		--quiet --warn-all \
  		--add-include-path=$(srcdir) --add-include=path=. \
  		--c-include="clutter-gst/clutter-gst.h" \
-@@ -162,7 +157,7 @@ ClutterGst-@CLUTTER_GST_API_VERSION@.gir: $(INTROSPECTION_SCANNER) libclutter-gs
+@@ -161,7 +157,7 @@ ClutterGst-@CLUTTER_GST_API_VERSION@.gir: $(INTROSPECTION_SCANNER) libclutter-gs
  		--include=GstAudio-1.0 \
  		--add-include-path=`$(PKG_CONFIG) --variable=girdir gstreamer-pbutils-1.0` \
  		--include=GstPbutils-1.0 \
@@ -44,7 +43,7 @@ index 0df17b3..ef501c1 100644
  		--library=libclutter-gst-@CLUTTER_GST_API_VERSION@.la \
  		--libtool="${LIBTOOL}" \
  		--output $@ \
-@@ -173,6 +168,14 @@ ClutterGst-@CLUTTER_GST_API_VERSION@.gir: $(INTROSPECTION_SCANNER) libclutter-gs
+@@ -172,6 +168,14 @@ ClutterGst-@CLUTTER_GST_API_VERSION@.gir: $(INTROSPECTION_SCANNER) libclutter-gs
  		--pkg gstreamer-1.0 \
  		--pkg gstreamer-base-1.0 \
  		--pkg-export clutter-gst-@CLUTTER_GST_API_VERSION@ \
