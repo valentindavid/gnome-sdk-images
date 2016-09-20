@@ -112,8 +112,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gobject-introspection/1.49/gobject-introspection-1.49.2.tar.xz",
-                    "sha256": "73d59470ba1a546b293f54d023fd09cca03a951005745d86d586b9e3a8dde9ac"
+                    "url": "https://download.gnome.org/sources/gobject-introspection/1.50/gobject-introspection-1.50.0.tar.xz",
+                    "sha256": "1c6597c666f543c70ef3d7c893ab052968afae620efdc080c36657f4226337c5"
                 }
             ]
         },
@@ -190,8 +190,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gsettings-desktop-schemas/3.21/gsettings-desktop-schemas-3.21.4.tar.xz",
-                    "sha256": "6d195bfe8d4af56b2cfb46417473ecad6e41b7254ff226bb9d20c8944310c15f"
+                    "url": "https://download.gnome.org/sources/gsettings-desktop-schemas/3.22/gsettings-desktop-schemas-3.22.0.tar.xz",
+                    "sha256": "0f06c7ba34c3a99e4d58b10889496133c9aaad6698ea2d8405d481c7f1a7eae1"
                 }
             ]
         },
@@ -532,6 +532,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/libsecret/0.18/libsecret-0.18.5.tar.xz",
                     "sha256": "9ce7bd8dd5831f2786c935d82638ac428fa085057cc6780aba0e39375887ccb3"
+                },
+                {
+                    "type": "shell",
+                    "commands": ["autoreconf -f"]
                 }
             ]
         },
