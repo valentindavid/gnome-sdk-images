@@ -248,8 +248,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://wayland.freedesktop.org/releases/wayland-1.11.0.tar.xz",
-                     "sha256": "9540925f7928becfdf5e3b84c70757f6589bf1ceef09bea78784d8e4772c0db0"
+                     "url": "https://wayland.freedesktop.org/releases/wayland-1.12.0.tar.xz",
+                     "sha256": "d6b4135cba0188abcb7275513c72dede751d6194f6edc5b82183a3ba8b821ab1"
                  }
             ]
         },
@@ -420,8 +420,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/cogl/1.22/cogl-1.22.0.tar.xz",
-                    "sha256": "689dfb5d14fc1106e9d2ded0f7930dcf7265d0bc84fa846b4f03941633eeaa91"
+                    "url": "https://download.gnome.org/sources/cogl/1.22/cogl-1.22.2.tar.xz",
+                    "sha256": "39a718cdb64ea45225a7e94f88dddec1869ab37a21b339ad058a9d898782c00d"
                 }
             ]
         },
@@ -652,8 +652,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gjs/1.45/gjs-1.45.4.tar.xz",
-                    "sha256": "db51bc2aae51700a2a8ca8ba597c488505d106bc70b9605e77c6ab5183212228"
+                    "url": "https://download.gnome.org/sources/gjs/1.46/gjs-1.46.0.tar.xz",
+                    "sha256": "2283591fa70785443793e1d7db66071b36052d707075f229baeb468d8dd25ad4"
                 }
             ]
         },
@@ -751,8 +751,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.13.92.tar.xz",
-                    "sha256": "97db90daa1f7241eade79f91c0c94001a7ad4b17ebb0a1c5c0b7a8449dae94e0"
+                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.0.tar.xz",
+                    "sha256": "0513ad836c624a3d24bdf1a99f4b4aead984ab6684150bc70f16db651590ea0a"
                 },
                 {
                     "type": "patch",
