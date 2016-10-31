@@ -96,8 +96,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glib/2.50/glib-2.50.0.tar.xz",
-                    "sha256": "830b551fa626bda06e12729205b3c5bb0d82b924a8cf64d948945878f01b7d70"
+                    "url": "https://download.gnome.org/sources/glib/2.50/glib-2.50.1.tar.xz",
+                    "sha256": "2ef87a78f37c1eb5b95f4cc95efd5b66f69afad9c9c0899918d04659cf6df7dd"
                 }
             ]
         },
@@ -139,8 +139,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.34/vala-0.34.0.tar.xz",
-                    "sha256": "5d59e1ad4c59debc83687b593345a3cf9ef2e9020354145e59a188de4348f455"
+                    "url": "https://download.gnome.org/sources/vala/0.34/vala-0.34.2.tar.xz",
+                    "sha256": "765e9c2b429a66db93247940f8588319b43f35c173d057bcae5717a97d765c41"
                 }
             ]
         },
@@ -151,8 +151,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.34/vala-0.34.0.tar.xz",
-                    "sha256": "5d59e1ad4c59debc83687b593345a3cf9ef2e9020354145e59a188de4348f455"
+                    "url": "https://download.gnome.org/sources/vala/0.34/vala-0.34.2.tar.xz",
+                    "sha256": "765e9c2b429a66db93247940f8588319b43f35c173d057bcae5717a97d765c41"
                 }
             ]
         },
@@ -362,8 +362,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.0.tar.xz",
-                    "sha256": "88d0bb584be7ecec965b82ba88a9cf0aafd6f03eff7447653295ab2341c74134"
+                    "url": "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.2.tar.xz",
+                    "sha256": "2343dcaed2fc237ef718136ff4110fef7eb1ebfe178a9b064aa21cd74ecb6946"
                 }
             ]
         },
@@ -372,8 +372,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.21/adwaita-icon-theme-3.21.91.tar.xz",
-                    "sha256": "a8013082140e1f3527ffe762a440bf162f3d97fd7cf88c73788dc9f2c27c79f8"
+                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.22/adwaita-icon-theme-3.22.0.tar.xz",
+                    "sha256": "c18bf6e26087d9819a962c77288b291efab25d0419b73d909dd771716a45dcb7"
                 }
             ]
         },
@@ -552,8 +552,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gvfs/1.30/gvfs-1.30.0.tar.xz",
-                    "sha256": "2285d387213eef528f09df4b113d9d2e54ce7108c50587355d07f2a885840da4"
+                    "url": "https://download.gnome.org/sources/gvfs/1.30/gvfs-1.30.1.tar.xz",
+                    "sha256": "e752e7bb46e64e4025f63428d4f5247e3e5c0d0b5eeb4f81dbf1cd7b75f59d7b"
                 }
             ]
         },
@@ -591,8 +591,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-themes-standard/3.20/gnome-themes-standard-3.20.2.tar.xz",
-                    "sha256": "9d0d9c4b2c9f9008301c3c1878ebb95859a735b7fd4a6a518802b9637e4a7915"
+                    "url": "https://download.gnome.org/sources/gnome-themes-standard/3.22/gnome-themes-standard-3.22.2.tar.xz",
+                    "sha256": "b34516cd59b873c187c1897c25bac3b9ce2d30a472f1fd7ae9d7105d93e17da5"
                 }
             ]
         },
@@ -744,8 +744,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.0.tar.xz",
-                    "sha256": "0513ad836c624a3d24bdf1a99f4b4aead984ab6684150bc70f16db651590ea0a"
+                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.1.tar.xz",
+                    "sha256": "2e2d76c328de65bed6e0e4f096b2720a366654b27fc1af0830ece90bc4b7ceb5"
                 },
                 {
                     "type": "patch",
