@@ -127,24 +127,6 @@
             ]
         },
         {
-            "name": "vala-bootstrap",
-            "cleanup": [ "/bin/*-0.16",
-                         "/lib/*-0.16*",
-                         "/lib/pkgconfig/*",
-                         "/include/vala-0.16",
-                         "/share/vala-0.16" ],
-            "cleanup-platform": [ "*" ],
-            "config-opts": [ "--disable-build-from-vala",
-                             "--disable-vapigen" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.34/vala-0.34.2.tar.xz",
-                    "sha256": "765e9c2b429a66db93247940f8588319b43f35c173d057bcae5717a97d765c41"
-                }
-            ]
-        },
-        {
             "name": "vala",
             "cleanup-platform": [ "*" ],
             "config-opts": [ "--enable-vapigen", "--enable-unversioned" ],
