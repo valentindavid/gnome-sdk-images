@@ -129,7 +129,7 @@
         {
             "name": "vala",
             "cleanup-platform": [ "*" ],
-            "config-opts": [ "--enable-vapigen", "--enable-unversioned" ],
+            "config-opts": [ "--enable-unversioned" ],
             "sources": [
                 {
                     "type": "archive",
