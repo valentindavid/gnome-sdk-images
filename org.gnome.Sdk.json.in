@@ -790,6 +790,14 @@
                 },
                 {
                     "type": "file",
+                    "path": "org.gnome.Sdk.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "org.gnome.Platform.appdata.xml"
+                },
+                {
+                    "type": "file",
                     "path": "os-release-configure",
                     "dest-filename": "configure"
                 }
