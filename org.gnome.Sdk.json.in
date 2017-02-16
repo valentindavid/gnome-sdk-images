@@ -100,6 +100,11 @@
                      "type": "archive",
                      "url": "https://download.gnome.org/sources/glib/2.48/glib-2.48.2.tar.xz",
                      "sha256": "f25e751589cb1a58826eac24fbd4186cda4518af772806b666a3f91f66e6d3f4"
+                },
+                {
+                    "type": "shell",
+                    /* Work around the .pyc files being in the base, and python compilation editin them in-place */
+                    "commands": [ "rm -rf /usr/share/glib-2.0/codegen/*.pyc" ]
                 }
             ]
         },
@@ -114,6 +119,11 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gobject-introspection/1.48/gobject-introspection-1.48.0.tar.xz",
                     "sha256": "fa275aaccdbfc91ec0bc9a6fd0562051acdba731e7d584b64a277fec60e75877"
+                },
+                {
+                    "type": "shell",
+                    /* Work around the .pyc files being in the base, and python compilation editin them in-place */
+                    "commands": [ "rm -rf /usr/lib/gobject-introspection/giscanner/*.pyc /usr/lib/gobject-introspection/giscanner/*/*.pyc" ]
                 }
             ]
         },
@@ -274,6 +284,11 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gdk-pixbuf/2.34/gdk-pixbuf-2.34.0.tar.xz",
                     "sha256": "d55e5b383ee219bd0e23bf6ed4427d56a7db5379729a6e3e0a0e0eba9a8d8879"
+                },
+                {
+                    "type": "shell",
+                    /* Work around the loader files being in the base,install editing it in-place */
+                    "commands": [ "rm -rf /usr/lib/gdk-pixbuf-2.0/*/loaders.cache" ]
                 }
             ]
         },
@@ -296,6 +311,11 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.15.tar.xz",
                     "sha256": "d9cac4a123eec6e553a26e120979bab7425def9ae7ce7c079eba5e4a45db05f4"
+                },
+                {
+                    "type": "shell",
+                    /* Work around the loader files being in the base,install editing it in-place */
+                    "commands": [ "rm -rf /usr/lib/gdk-pixbuf-2.0/*/loaders.cache" ]
                 }
             ]
         },
