@@ -714,6 +714,7 @@
         },
         {
             "name": "webkitgtk4",
+            "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "cmake": true,
             "build-options" : {
                 "cflags": "-O2 -g1",
@@ -746,13 +747,14 @@
 		"-DBUILD_SHARED_LIBS:BOOL=ON",
 		"-DENABLE_GTKDOC=OFF",
 		"-DENABLE_VIDEO=ON",
-		"-DENABLE_WEB_AUDIO=ON"
+		"-DENABLE_WEB_AUDIO=ON",
+                "-DENABLE_MINIBROWSER=ON"
 	    ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.2.tar.xz",
-                    "sha256": "2edbcbd5105046aea55af9671c4de8deedb5b0e3567c618034d440a760675556"
+                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.5.tar.xz",
+                    "sha256": "3ca8f1c33a9b43d6c753dcac1c0788656930e06382b10fdf5c2805ea8f96369f"
                 },
                 {
                     "type": "patch",
