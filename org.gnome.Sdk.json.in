@@ -863,6 +863,14 @@
                 },
                 {
                     "type": "file",
+                    "path": "issue"
+                },
+                {
+                    "type": "file",
+                    "path": "issue.net"
+                },
+                {
+                    "type": "file",
                     "path": "org.gnome.Sdk.appdata.xml"
                 },
                 {
