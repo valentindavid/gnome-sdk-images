@@ -225,6 +225,10 @@
         {
             "name": "json-glib",
             "config-opts": [ "--disable-static" ],
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/json-glib-1.0.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/json-glib-*.mo"
+            ],
             "sources": [
                 {
                     "type": "git",
