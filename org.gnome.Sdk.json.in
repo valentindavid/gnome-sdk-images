@@ -727,7 +727,7 @@
         {
             "name": "webkitgtk4",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
-            "cmake": true,
+            "buildsystem": "cmake",
             "build-options" : {
                 "cflags": "-g1",
                 "cxxflags": "-g1",
