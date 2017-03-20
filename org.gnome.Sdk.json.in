@@ -770,8 +770,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.15.90.tar.xz",
-                    "sha256": "d9c13cf5b1db9e398d9d6a55e1b272a85e86bd00650cc068a9744864f48996ba"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.16.0.tar.xz",
+                    "sha256": "5ea371d8910ef3ce7f7d087242c5646f8f3073a5298287c9eb60e055ec107cdc"
                 },
                 {
                     "type": "patch",
