@@ -473,11 +473,11 @@
                             "--build=i586-unknown-linux-gnu"
                         ]
                     },
-		    "arm" : {
+                    "arm" : {
                         "config-opts" : [
                             "--build=arm-unknown-linux-gnueabi"
-			]
-		    }
+                        ]
+                    }
                 }
             },
             "config-opts": ["--enable-experimental", "--enable-orc" ,
@@ -503,11 +503,11 @@
                             "--build=i586-unknown-linux-gnu"
                         ]
                     },
-		    "arm" : {
+                    "arm" : {
                         "config-opts" : [
                             "--build=arm-unknown-linux-gnueabi"
-			]
-		    }
+                        ]
+                    }
                 }
             },
             "config-opts": ["--enable-experimental", "--enable-orc" ],
@@ -605,11 +605,11 @@
                             "--host=i586-unknown-linux-gnu"
                         ]
                     },
-		    "arm" : {
+                    "arm" : {
                         "config-opts" : [
                             "--host=arm-unknown-linux-gnueabi"
-			]
-		    }
+                        ]
+                    }
                 }
             },
             "config-opts": [  "--enable-posix-nspr-emulation",
@@ -737,31 +737,31 @@
                             "-DCMAKE_SYSTEM_PROCESSOR=i586"
                         ]
                     },
-		    "arm" : {
+                    "arm" : {
                         "config-opts" : [
                             "-DCMAKE_SYSTEM_PROCESSOR=arm"
-			]
-		    }
+                        ]
+                    }
                 }
             },
             "config-opts": [
-		"-DPORT=GTK",
-		"-DCMAKE_BUILD_TYPE=Release",
-		"-DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG",
-		"-DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG",
-		"-DENABLE_ACCELERATED_2D_CANVAS=OFF",
-		"-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-		"-DLIB_INSTALL_DIR:PATH=/usr/lib",
-		"-DSYSCONF_INSTALL_DIR:PATH=/usr/etc",
-		"-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
-		"-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
-		"-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
-		"-DBUILD_SHARED_LIBS:BOOL=ON",
-		"-DENABLE_GTKDOC=OFF",
-		"-DENABLE_VIDEO=ON",
-		"-DENABLE_WEB_AUDIO=ON",
+                "-DPORT=GTK",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG",
+                "-DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG",
+                "-DENABLE_ACCELERATED_2D_CANVAS=OFF",
+                "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+                "-DLIB_INSTALL_DIR:PATH=/usr/lib",
+                "-DSYSCONF_INSTALL_DIR:PATH=/usr/etc",
+                "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
+                "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
+                "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
+                "-DBUILD_SHARED_LIBS:BOOL=ON",
+                "-DENABLE_GTKDOC=OFF",
+                "-DENABLE_VIDEO=ON",
+                "-DENABLE_WEB_AUDIO=ON",
                 "-DENABLE_MINIBROWSER=ON"
-	    ],
+            ],
             "sources": [
                 {
                     "type": "archive",
