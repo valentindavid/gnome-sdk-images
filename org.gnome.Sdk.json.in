@@ -371,6 +371,11 @@
                              "--enable-xdamage",
                              "--enable-x11-backend",
                              "--enable-wayland-backend" ],
+            "cleanup-platform": [
+                "/bin/gtk3-*",
+                "/bin/gtk-builder-tool",
+                "/bin/gtk-encode-symbolic-svg"
+            ],
             "sources": [
                 {
                     "type": "git",
