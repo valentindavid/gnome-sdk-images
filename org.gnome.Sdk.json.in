@@ -516,7 +516,7 @@
                     }
                 }
             },
-            "config-opts": ["--enable-experimental", "--enable-orc" ],
+            "config-opts": ["--enable-experimental", "--enable-orc", "--disable-fatal-warnings" ],
             "sources": [
                 {
                     "type": "git",
