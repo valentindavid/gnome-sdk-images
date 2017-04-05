@@ -401,7 +401,7 @@
         },
         {
             "name": "gstreamer",
-            "config-opts": ["--enable-debug", "--disable-examples" ],
+            "config-opts": ["--enable-debug", "--disable-examples", "--disable-fatal-warnings" ],
             "sources": [
                 {
                     "type": "git",
