@@ -822,30 +822,16 @@
                     "PYTHON": "/usr/bin/python3"
                 }
             },
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3 ./setup.py build",
+                "python3 ./setup.py install"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://cairographics.org/releases/pycairo-1.10.0.tar.bz2",
-                    "sha256": "9aa4078e7eb5be583aeabbe8d87172797717f95e8c4338f0d4a17b683a7253be"
-                },
-                {
-                    "type": "shell",
-                    "commands": [ "python3 ./waf --version" ]
-                },
-                {
-                    "type": "patch",
-                    "strip-components": 0,
-                    "path": "cairo-waf-use-python-config-as-shell-script.patch"
-                },
-                {
-                    "type": "patch",
-                    "strip-components": 0,
-                    "path": "pycairo-1.10.0-pickle-python3.patch"
-                },
-                {
-                    "type": "file",
-                    "path": "waf-configure",
-                    "dest-filename": "configure"
+                    "url": "https://github.com/pygobject/pycairo/releases/download/v1.12.0/pycairo-1.12.0.tar.gz",
+                    "sha256": "243c351d7abcef41ac1fa984d2c753f3d065336a0fcf4c20fafb191b23423095"
                 }
             ]
         },
