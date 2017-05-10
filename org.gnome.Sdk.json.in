@@ -754,8 +754,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.webkitgtk.org/releases/webkitgtk-2.14.5.tar.xz",
-                    "sha256": "3ca8f1c33a9b43d6c753dcac1c0788656930e06382b10fdf5c2805ea8f96369f"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.14.7.tar.xz",
+                    "sha256": "87bcfb96ac2b14df6e764c40c9d74ae3e8409f9cecb242ebe1dbb41c181c0b6d"
                 },
                 {
                     "type": "patch",
