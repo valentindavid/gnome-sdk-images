@@ -423,6 +423,15 @@
             ]
         },
         {
+            "name": "opus",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://git.xiph.org/opus.git"
+                }
+            ]
+        },
+        {
             "name": "gstreamer-plugins-base",
             "config-opts": ["--enable-experimental", "--enable-orc" ],
             "sources": [
