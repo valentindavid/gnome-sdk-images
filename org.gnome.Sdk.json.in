@@ -395,6 +395,7 @@
                 "/bin/gtk-builder-tool",
                 "/bin/gtk-encode-symbolic-svg"
             ],
+            "ensure-writable": ["/lib/gtk-3.0/*/immodules.cache"],
             "sources": [
                 {
                     "type": "git",
