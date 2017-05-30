@@ -813,17 +813,6 @@
             ]
         },
         {
-            "name": "zenity",
-            "cleanup": [ "/share/help" ],
-            "config-opts": ["--disable-webkitgtk" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://git.gnome.org/zenity"
-                }
-            ]
-        },
-        {
             "name": "yelp",
             "sources": [
                 {
