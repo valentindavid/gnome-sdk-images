@@ -168,7 +168,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/vala"
+                    "url": "git://git.gnome.org/vala",
+                    "branch": "0.36"
                 }
             ]
         },
