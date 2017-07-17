@@ -103,7 +103,7 @@
         },
         {
             "name": "glib",
-            "config-opts": [ "--with-pcre=system" ],
+            "config-opts": [ "--with-pcre=system", "--with-python=python3" ],
             "ensure-writable": [ "/share/glib-2.0/codegen/*.pyc" ],
             "cleanup-platform": [ "/share/glib-2.0/codegen",
                                   "/bin/gdbus-codegen",
