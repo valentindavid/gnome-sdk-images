@@ -590,6 +590,7 @@
         {
             "name": "gcab",
             "config-opts": ["--disable-static", "--enable-fast-install"],
+            "no-parallel-make": true,
             "sources": [
                 {
                     "type": "git",
