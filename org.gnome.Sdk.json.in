@@ -608,8 +608,8 @@
             ]
         },
         {
-            "name": "mozjs38",
-            "build-options" : {
+            "name": "mozjs52",
+            "build-options": {
                 "arch" : {
                     "i386" : {
                         "config-opts" : [
@@ -631,54 +631,13 @@
             "subdir": "js/src",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://people.mozilla.org/~sstangl/mozjs-38.2.1.rc0.tar.bz2",
-                    "sha256": "01994c758174bc173bcf4960f05ecb4da21014f09641a63b2952bbf9eeaa8b5c"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-fix-tracelogger.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-release-number.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-shell-version.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-pkg-config-version.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-copy-headers.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-1269317.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-fix-64bit-archs.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "mozjs38-1143022.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        /* Work around mtime issue in configure and configure.ac (see bug 778802) */
-                        "touch js/src/configure",
-                        "cp -f /usr/share/gnu-config/config.sub ./build/autoconf/",
-                        "cp -f /usr/share/gnu-config/config.guess ./build/autoconf/"
-                    ]
+                    "type": "git",
+                    "url": "https://github.com/ptomato/mozjs.git",
+                    "branch": "mozjs52"
                 }
             ],
             "post-install": [
-                "cp -p js/src/js-config.h /usr/include/mozjs-38",
+                "cp -p js/src/js-config.h /usr/include/mozjs-52",
                 "rm /usr/lib/libjs_static.ajs"
             ]
         },
