@@ -625,7 +625,6 @@
             },
             "config-opts": [  "--enable-posix-nspr-emulation",
                               "--with-system-zlib",
-                              "--enable-system-ffi",
                               "--with-system-icu",
                               "--with-intl-api"],
             "subdir": "js/src",
