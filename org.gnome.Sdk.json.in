@@ -626,7 +626,8 @@
             "config-opts": [  "--enable-posix-nspr-emulation",
                               "--with-system-zlib",
                               "--with-system-icu",
-                              "--with-intl-api"],
+                              "--with-intl-api",
+                              "AUTOCONF=autoconf"],
             "subdir": "js/src",
             "sources": [
                 {
