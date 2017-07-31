@@ -64,7 +64,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-common"
+                    "url": "https://git.gnome.org/browse/gnome-common"
                 }
             ]
         },
@@ -74,7 +74,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/yelp-xsl"
+                    "url": "https://git.gnome.org/browse/yelp-xsl"
                 }
             ]
         },
@@ -84,7 +84,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/yelp-tools"
+                    "url": "https://git.gnome.org/browse/yelp-tools"
                 }
             ]
         },
@@ -97,7 +97,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/cantarell-fonts"
+                    "url": "https://git.gnome.org/browse/cantarell-fonts"
                 }
             ]
         },
@@ -115,7 +115,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/glib"
+                    "url": "https://git.gnome.org/browse/glib"
                 }
             ]
         },
@@ -130,7 +130,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gobject-introspection"
+                    "url": "https://git.gnome.org/browse/gobject-introspection"
                 }
             ]
         },
@@ -140,7 +140,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/glib-networking"
+                    "url": "https://git.gnome.org/browse/glib-networking"
                 }
             ]
         },
@@ -157,7 +157,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/vala-bootstrap"
+                    "url": "https://git.gnome.org/browse/vala-bootstrap"
                 }
             ]
         },
@@ -168,7 +168,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/vala",
+                    "url": "https://git.gnome.org/browse/vala",
                     "branch": "0.36"
                 }
             ]
@@ -180,7 +180,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/dconf"
+                    "url": "https://git.gnome.org/browse/dconf"
                 },
                 {
                     "type": "patch",
@@ -194,7 +194,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libsoup"
+                    "url": "https://git.gnome.org/browse/libsoup"
                 }
             ]
         },
@@ -203,7 +203,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gsettings-desktop-schemas"
+                    "url": "https://git.gnome.org/browse/gsettings-desktop-schemas"
                 }
             ]
         },
@@ -213,7 +213,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/git/dbus/dbus-glib"
+                    "url": "https://anongit.freedesktop.org/git/dbus/dbus-glib.git"
                 }
             ]
         },
@@ -228,7 +228,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/json-glib"
+                    "url": "https://git.gnome.org/browse/json-glib"
                 }
             ]
         },
@@ -282,7 +282,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/pango"
+                    "url": "https://git.gnome.org/browse/pango"
                 }
             ]
         },
@@ -291,7 +291,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/atk"
+                    "url": "https://git.gnome.org/browse/atk"
                 }
             ]
         },
@@ -300,7 +300,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/at-spi2-core"
+                    "url": "https://git.gnome.org/browse/at-spi2-core"
                 }
             ]
         },
@@ -309,7 +309,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/at-spi2-atk"
+                    "url": "https://git.gnome.org/browse/at-spi2-atk"
                 }
             ]
         },
@@ -323,7 +323,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gdk-pixbuf"
+                    "url": "https://git.gnome.org/browse/gdk-pixbuf"
                 }
             ]
         },
@@ -333,7 +333,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libcroco"
+                    "url": "https://git.gnome.org/browse/libcroco"
                 }
             ]
         },
@@ -344,7 +344,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/librsvg",
+                    "url": "https://git.gnome.org/browse/librsvg",
                     "branch": "librsvg-2-40"
                 }
             ]
@@ -356,7 +356,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gtk+",
+                    "url": "https://git.gnome.org/browse/gtk+",
                     "branch": "gtk-2-24"
                 }
             ]
@@ -380,7 +380,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gtk+",
+                    "url": "https://git.gnome.org/browse/gtk+",
                     "branch": "gtk-3-22"
                 }
             ]
@@ -390,7 +390,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/adwaita-icon-theme"
+                    "url": "https://git.gnome.org/browse/adwaita-icon-theme"
                 }
             ]
         },
@@ -400,7 +400,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gstreamer"
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gstreamer.git"
                 }
             ]
         },
@@ -419,7 +419,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base"
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gst-plugins-base.git"
                 }
             ]
         },
@@ -439,7 +439,7 @@
                 {
                     "type": "git",
                     "branch": "cogl-1.22",
-                    "url": "git://git.gnome.org/cogl"
+                    "url": "https://git.gnome.org/browse/cogl"
                 }
             ]
         },
@@ -451,7 +451,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/clutter"
+                    "url": "https://git.gnome.org/browse/clutter"
                 }
             ]
         },
@@ -460,7 +460,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/clutter-gst",
+                    "url": "https://git.gnome.org/browse/clutter-gst",
                     "branch": "clutter-gst-3.0"
                 }
             ]
@@ -470,7 +470,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/clutter-gtk"
+                    "url": "https://git.gnome.org/browse/clutter-gtk"
                 }
             ]
         },
@@ -500,7 +500,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good"
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gst-plugins-good.git"
                 }
             ]
         },
@@ -524,7 +524,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad"
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gst-plugins-bad.git"
                 }
             ]
         },
@@ -533,7 +533,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.0pointer.net/libcanberra.git"
+                    "url": "https://git.0pointer.net/clone/libcanberra.git"
                 }
             ]
         },
@@ -543,7 +543,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libsecret"
+                    "url": "https://git.gnome.org/browse/libsecret"
                 }
             ]
         },
@@ -553,7 +553,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libnotify"
+                    "url": "https://git.gnome.org/browse/libnotify"
                 }
             ]
         },
@@ -565,7 +565,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gvfs"
+                    "url": "https://git.gnome.org/browse/gvfs"
                 }
             ]
         },
@@ -594,7 +594,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gcab"
+                    "url": "https://git.gnome.org/browse/gcab"
                 }
             ]
         },
@@ -603,7 +603,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-themes-standard"
+                    "url": "https://git.gnome.org/browse/gnome-themes-standard"
                 }
             ]
         },
@@ -647,7 +647,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gjs"
+                    "url": "https://git.gnome.org/browse/gjs"
                 }
             ]
         },
@@ -698,7 +698,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/vte"
+                    "url": "https://git.gnome.org/browse/vte"
                 }
             ]
         },
@@ -758,7 +758,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/yelp"
+                    "url": "https://git.gnome.org/browse/yelp"
                 },
                 {
                     "type": "patch",
@@ -797,7 +797,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/pygobject"
+                    "url": "https://git.gnome.org/browse/pygobject"
                 }
             ]
         },
@@ -811,7 +811,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-python"
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gst-python.git"
                 }
             ]
         },
@@ -822,7 +822,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gcr"
+                    "url": "https://git.gnome.org/browse/gcr"
                 }
             ]
         },
