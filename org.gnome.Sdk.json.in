@@ -533,7 +533,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.0pointer.net/clone/libcanberra.git"
+                    "url": "http://git.0pointer.net/clone/libcanberra.git" /* No HTTPS unfortunately */
                 }
             ]
         },
