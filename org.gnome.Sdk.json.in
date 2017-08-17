@@ -176,8 +176,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsoup/2.56/libsoup-2.56.0.tar.xz",
-                    "sha256": "d8216b71de8247bc6f274ec054c08547b2e04369c1f8add713e9350c8ef81fe5"
+                    "url": "https://download.gnome.org/sources/libsoup/2.56/libsoup-2.56.1.tar.xz",
+                    "sha256": "c32a46d77b4da433b51d8fd09a57a44b198e03bdc93e5219afcc687c7948eac3"
                 }
             ]
         },
