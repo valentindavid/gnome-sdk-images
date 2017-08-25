@@ -269,8 +269,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://wayland.freedesktop.org/releases/wayland-1.11.0.tar.xz",
-                     "sha256": "9540925f7928becfdf5e3b84c70757f6589bf1ceef09bea78784d8e4772c0db0"
+                     "url": "https://wayland.freedesktop.org/releases/wayland-1.14.0.tar.xz",
+                     "sha256": "ed80cabc0961a759a42092e2c39aabfc1ec9a13c86c98bbe2b812f008da27ab8"
                  }
             ]
         },
@@ -280,8 +280,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://wayland.freedesktop.org/releases/wayland-protocols-1.7.tar.xz",
-                     "sha256": "635f2a937d318f1fecb97b54074ca211486e38af943868dd0fa82ea38d091c1f"
+                     "url": "https://wayland.freedesktop.org/releases/wayland-protocols-1.10.tar.xz",
+                     "sha256": "5719c51d7354864983171c5083e93a72ac99229e2b460c4bb10513de08839c0a"
                  }
             ]
         },
@@ -332,6 +332,11 @@
                 {
                     "type": "git",
                     "url": "https://git.gnome.org/browse/gdk-pixbuf"
+                },
+                {
+                    "type": "shell",
+                    /* Temporary workaround until fixed in fd.o sdk (81b7e21a0) */
+                    "commands": ["update-mime-database /usr/share/mime"]
                 }
             ]
         },
