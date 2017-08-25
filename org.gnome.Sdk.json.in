@@ -69,24 +69,6 @@
             ]
         },
         {
-            "name": "meson",
-            "buildsystem": "simple",
-            "build-commands": [
-                "python3 setup.py install"
-            ],
-            "ensure-writable": [
-                "/lib/python3.5/site-packages/easy-install.pth"
-            ],
-            "cleanup-platform": ["*"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/6d/32/a474702fcba1144aef89e7ec5d8a33d49be8389a0f983d11aab486c8392b/meson-0.41.2.tar.gz",
-                    "sha256": "ad1707717987fe8b7b65392b8327580105fcbdd5f2032bf3b7232b647284c95c"
-                }
-            ]
-        },
-        {
             "name": "yelp-xsl",
             "config-opts": ["--disable-doc"],
             "sources": [
