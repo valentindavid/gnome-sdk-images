@@ -744,19 +744,12 @@
             "config-opts": [
                 "-DPORT=GTK",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG",
-                "-DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG",
-                "-DENABLE_ACCELERATED_2D_CANVAS=OFF",
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
                 "-DLIB_INSTALL_DIR:PATH=/usr/lib",
                 "-DSYSCONF_INSTALL_DIR:PATH=/usr/etc",
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
-                "-DBUILD_SHARED_LIBS:BOOL=ON",
-                "-DENABLE_GTKDOC=OFF",
-                "-DENABLE_VIDEO=ON",
-                "-DENABLE_WEB_AUDIO=ON",
                 "-DENABLE_MINIBROWSER=ON"
             ],
             "sources": [
@@ -764,10 +757,6 @@
                     "type": "archive",
                     "url": "https://webkitgtk.org/releases/webkitgtk-2.18.0.tar.xz",
                     "sha256": "b583e46a3de36a3e80ba33b084ead60512a2046aca01ff61e50e519436e5038d"
-                },
-                {
-                    "type": "patch",
-                    "path": "webkitgtk-cmake-buildapi.patch"
                 }
             ]
         },
