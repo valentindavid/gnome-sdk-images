@@ -145,7 +145,7 @@
         },
         {
             "name": "glib-networking",
-            "config-opts": ["--disable-static", "--with-libproxy"],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
