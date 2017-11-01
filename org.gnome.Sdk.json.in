@@ -144,6 +144,15 @@
             ]
         },
         {
+            "name": "gsettings-desktop-schemas",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://git.gnome.org/browse/gsettings-desktop-schemas"
+                }
+            ]
+        },
+        {
             "name": "glib-networking",
             "buildsystem": "meson",
             "sources": [
@@ -204,15 +213,6 @@
                 {
                     "type": "git",
                     "url": "https://git.gnome.org/browse/libsoup"
-                }
-            ]
-        },
-        {
-            "name": "gsettings-desktop-schemas",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/gsettings-desktop-schemas"
                 }
             ]
         },
