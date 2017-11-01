@@ -155,6 +155,10 @@
         {
             "name": "glib-networking",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -193,7 +197,7 @@
         },
         {
             "name": "dconf",
-            "config-opts": ["--disable-static", "--disable-man"],
+            "buildsystem": "meson",
             "cleanup": [ "/libexec/dconf-service", "/share/dbus-1/services/*" ],
             "sources": [
                 {
@@ -315,6 +319,7 @@
         },
         {
             "name": "at-spi2-atk",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
