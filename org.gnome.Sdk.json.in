@@ -665,7 +665,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gjs"
+                    "url": "https://gitlab.gnome.org/GNOME/gjs.git"
                 }
             ]
         },
