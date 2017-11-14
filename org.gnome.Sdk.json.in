@@ -733,7 +733,7 @@
             "buildsystem": "cmake",
             "config-opts": [
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib"
             ],
             "sources": [
                 {
@@ -747,7 +747,7 @@
             "buildsystem": "cmake",
             "config-opts": [
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib"
             ],
             "sources": [
                 {
