@@ -758,6 +758,15 @@
             ]
         },
         {
+            "name": "upower",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://anongit.freedesktop.org/git/upower.git"
+                }
+            ]
+        },
+        {
             "name": "webkitgtk4",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "buildsystem": "cmake",
