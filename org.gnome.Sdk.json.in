@@ -758,15 +758,6 @@
             ]
         },
         {
-            "name": "upower",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://anongit.freedesktop.org/git/upower.git"
-                }
-            ]
-        },
-        {
             "name": "webkitgtk4",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "buildsystem": "cmake",
@@ -796,7 +787,10 @@
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
-                "-DENABLE_MINIBROWSER=ON"
+                "-DENABLE_MINIBROWSER=ON",
+                # FIXME: This is very bad as it means timers will not be throttled on low power.
+                # We need libupower-glib in the SDK, but not the rest of upower.
+                "-DUSE_UPOWER=OFF"
             ],
             "sources": [
                 {
