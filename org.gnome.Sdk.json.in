@@ -788,9 +788,7 @@
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
                 "-DENABLE_MINIBROWSER=ON",
-                # FIXME: This is very bad as it means timers will not be throttled on low power.
-                # We need libupower-glib in the SDK, but not the rest of upower.
-                "-DUSE_UPOWER=OFF"
+                "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */
             ],
             "sources": [
                 {
