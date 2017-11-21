@@ -793,8 +793,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.1.tar.xz",
-                    "sha256": "9f78555486ea11d53c90394da4d38a7d5b06e76d5b563182a4ed8326adc4cce5"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.2.tar.xz",
+                    "sha256": "439e88894accd4849d218b29a0755d25aa6c79224fc700206c860108d223d4c3"
                 }
             ]
         },
