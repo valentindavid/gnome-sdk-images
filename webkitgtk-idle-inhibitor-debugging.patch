@@ -1,0 +1,454 @@
+From 45db2cfad6d184931228c68020d7dcb2bdaa04a9 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@igalia.com>
+Date: Wed, 29 Nov 2017 15:28:14 -0600
+Subject: [PATCH] wip
+
+---
+ Source/WebCore/PAL/pal/PlatformGTK.cmake           |   1 +
+ Source/WebCore/PAL/pal/system/SleepDisabler.cpp    |   4 +-
+ .../PAL/pal/system/gtk/SleepDisablerGtk.cpp        | 193 +++++++++++++++++++++
+ .../WebCore/PAL/pal/system/gtk/SleepDisablerGtk.h  |  56 ++++++
+ Source/WebCore/html/HTMLMediaElement.cpp           |   5 +
+ .../WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp |  81 +--------
+ 6 files changed, 263 insertions(+), 77 deletions(-)
+ create mode 100644 Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.cpp
+ create mode 100644 Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.h
+
+diff --git a/Source/WebCore/PAL/pal/PlatformGTK.cmake b/Source/WebCore/PAL/pal/PlatformGTK.cmake
+index b4ad45cc7fb..4d26bf27ac1 100644
+--- a/Source/WebCore/PAL/pal/PlatformGTK.cmake
++++ b/Source/WebCore/PAL/pal/PlatformGTK.cmake
+@@ -3,6 +3,7 @@ list(APPEND PAL_SOURCES
+ 
+     system/ClockGeneric.cpp
+ 
++    system/gtk/SleepDisablerGtk.cpp
+     system/gtk/SoundGtk.cpp
+ 
+     text/KillRing.cpp
+diff --git a/Source/WebCore/PAL/pal/system/SleepDisabler.cpp b/Source/WebCore/PAL/pal/system/SleepDisabler.cpp
+index 10188eedff4..4390850ea40 100644
+--- a/Source/WebCore/PAL/pal/system/SleepDisabler.cpp
++++ b/Source/WebCore/PAL/pal/system/SleepDisabler.cpp
+@@ -28,12 +28,12 @@
+ 
+ namespace PAL {
+ 
+-#if !PLATFORM(COCOA)
++#if !PLATFORM(COCOA) && !PLATFORM(GTK)
+ std::unique_ptr<SleepDisabler> SleepDisabler::create(const char* reason, Type type)
+ {
+     return std::unique_ptr<SleepDisabler>(new SleepDisabler(reason, type));
+ }
+-#endif // !PLATFORM(COCOA)
++#endif // !PLATFORM(COCOA) && !PLATFORM(GTK)
+ 
+ SleepDisabler::SleepDisabler(const char*, Type type)
+     : m_type(type)
+diff --git a/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.cpp b/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.cpp
+new file mode 100644
+index 00000000000..1057cd6e883
+--- /dev/null
++++ b/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.cpp
+@@ -0,0 +1,193 @@
++/*
++ * Copyright (C) 2017 Igalia S.L.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY APPLE INC. AND ITS CONTRIBUTORS ``AS IS''
++ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
++ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL APPLE INC. OR ITS CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
++ * THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#include "config.h"
++#include "SleepDisablerGtk.h"
++
++#include <wtf/glib/GUniquePtr.h>
++
++namespace PAL {
++
++std::unique_ptr<SleepDisabler> SleepDisabler::create(const char* reason, Type type)
++{
++    return std::unique_ptr<SleepDisabler>(new SleepDisablerGtk(reason, type));
++}
++
++SleepDisablerGtk::SleepDisablerGtk(const char* reason, Type type)
++    : SleepDisabler(reason, type)
++    , m_cancellable(adoptGRef(g_cancellable_new()))
++    , m_reason(reason)
++{
++g_warning("%s", __FUNCTION__);
++    // We don't support suspend ("System") inhibitors, only idle inhibitors.
++    // To get suspend inhibitors, we'd need to use the fancy GNOME
++    // SessionManager API, which requires registering as a client application,
++    // and... no, just no, especially not when this needs to work from the web
++    // process. Secondly, because the only current use of a suspend inhibitor
++    // in WebKit, HTMLMediaElement::shouldDisableSleep, is suspicious. There's
++    // really no valid reason for WebKit to ever block suspend, only idle.
++    if (type != SleepDisabler::Type::Display)
++{
++g_warning("Giving up because Type != Display");
++        return;
++}
++
++    // First, try to use the ScreenSaver API. Expect failure and ignore errors.
++    g_dbus_proxy_new_for_bus(G_BUS_TYPE_SESSION, static_cast<GDBusProxyFlags>(G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS),
++        nullptr, "org.freedesktop.ScreenSaver", "/ScreenSaver", "org.freedesktop.ScreenSaver", m_cancellable.get(),
++        [](GObject*, GAsyncResult* result, gpointer userData) {
++            auto* self = static_cast<SleepDisablerGtk*>(userData);
++//            self->m_screenSaverProxy = adoptGRef(g_dbus_proxy_new_for_bus_finish(result, nullptr));
++            if (self->m_screenSaverProxy) {
++                GUniquePtr<char> nameOwner(g_dbus_proxy_get_name_owner(self->m_screenSaverProxy.get()));
++                if (nameOwner)
++                    self->acquireInhibitor();
++                else
++                    self->m_screenSaverProxy = nullptr;
++            }
++
++            // If that failed, try to use the Flatpak portal. Ditto.
++            if (!self->m_screenSaverProxy) {
++                g_dbus_proxy_new_for_bus(G_BUS_TYPE_SESSION, static_cast<GDBusProxyFlags>(G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS),
++                    nullptr, "org.freedesktop.portal.Desktop", "/org/freedesktop/portal/desktop", "org.freedesktop.portal.Inhibit", self->m_cancellable.get(),
++                    [](GObject*, GAsyncResult* result, gpointer userData) {
++                        auto* self = static_cast<SleepDisablerGtk*>(userData);
++                        self->m_inhibitPortalProxy = adoptGRef(g_dbus_proxy_new_for_bus_finish(result, nullptr));
++                        if (self->m_inhibitPortalProxy) {
++                            GUniquePtr<char> nameOwner(g_dbus_proxy_get_name_owner(self->m_inhibitPortalProxy.get()));
++                            if (nameOwner)
++                                self->acquireInhibitor();
++                            else
++                                self->m_inhibitPortalProxy = nullptr;
++                        }
++
++                        // Give up. Don't warn the user: this is expected.
++                        if (!self->m_inhibitPortalProxy)
++{
++g_warning("Failed to create proxy for either ScreenSaver or Desktop portal :(");
++                            self->m_cancellable = nullptr;
++}
++                    }, self);
++                return;
++            }
++        }, this);
++}
++
++SleepDisablerGtk::~SleepDisablerGtk()
++{
++g_warning("%s", __FUNCTION__);
++    if (m_cancellable)
++{
++g_warning("Cancellable valid, just cancelling. Not need to release.");
++        g_cancellable_cancel(m_cancellable.get());
++}
++    else if (m_screenSaverCookie || m_inhibitPortalRequestObjectPath)
++        releaseInhibitor();
++}
++
++void SleepDisablerGtk::acquireInhibitor()
++{
++    ASSERT((m_screenSaverProxy && !m_inhibitPortalProxy) || (!m_screenSaverProxy && m_inhibitPortalProxy));
++
++    if (m_screenSaverProxy) {
++        g_dbus_proxy_call(m_screenSaverProxy.get(), "Inhibit", g_variant_new("(ss)", g_get_prgname(), m_reason.data()),
++            G_DBUS_CALL_FLAGS_NONE, -1, m_cancellable.get(), [](GObject*, GAsyncResult* result, gpointer userData) {
++                auto* self = static_cast<SleepDisablerGtk*>(userData);
++                GUniqueOutPtr<GError> error;
++                GRefPtr<GVariant> returnValue = adoptGRef(g_dbus_proxy_call_finish(self->m_screenSaverProxy.get(), result, &error.outPtr()));
++                if (error) {
++                    g_warning("Calling %s.Inhibit failed: %s", g_dbus_proxy_get_interface_name(self->m_screenSaverProxy.get()), error->message);
++                } else {
++                    ASSERT(returnValue);
++                    g_variant_get(returnValue.get(), "(u)", &self->m_screenSaverCookie);
++g_warning("Acquired ScreenSaver inhibitor %u", self->m_screenSaverCookie);
++                }
++                self->m_cancellable = nullptr;
++            }, this);
++        return;
++    }
++
++    ASSERT(m_inhibitPortalProxy);
++
++    GVariantBuilder builder;
++    g_variant_builder_init(&builder, G_VARIANT_TYPE_VARDICT);
++    g_variant_builder_add(&builder, "{sv}", "reason", g_variant_new_string(m_reason.data()));
++    g_dbus_proxy_call(m_inhibitPortalProxy.get(), "Inhibit", g_variant_new("(su@a{sv})", "" /* no window */, 8 /* idle */, g_variant_builder_end(&builder)),
++        G_DBUS_CALL_FLAGS_NONE, -1, m_cancellable.get(), [](GObject*, GAsyncResult* result, gpointer userData) {
++            auto* self = static_cast<SleepDisablerGtk*>(userData);
++            GUniqueOutPtr<GError> error;
++            GRefPtr<GVariant> returnValue = adoptGRef(g_dbus_proxy_call_finish(self->m_inhibitPortalProxy.get(), result, &error.outPtr()));
++            if (error) {
++                g_warning("Calling %s.Inhibit failed: %s", g_dbus_proxy_get_interface_name(self->m_screenSaverProxy.get()), error->message);
++            } else {
++                ASSERT(returnValue);
++                g_variant_get(returnValue.get(), "(o)", &self->m_inhibitPortalRequestObjectPath.outPtr());
++g_warning("Acquired desktop portal inhibitor %s", self->m_inhibitPortalRequestObjectPath.get());
++            }
++            self->m_cancellable = nullptr;
++        }, this);
++}
++
++void SleepDisablerGtk::releaseInhibitor()
++{
++    ASSERT((m_screenSaverProxy && !m_inhibitPortalProxy) || (!m_screenSaverProxy && m_inhibitPortalProxy));
++
++    if (m_screenSaverCookie) {
++        ASSERT(m_screenSaverProxy);
++        g_dbus_proxy_call(m_screenSaverProxy.get(), "UnInhibit", g_variant_new("(u)", m_screenSaverCookie), G_DBUS_CALL_FLAGS_NONE, -1, nullptr,
++        [](GObject* proxy, GAsyncResult* result, gpointer) {
++            GUniqueOutPtr<GError> error;
++            GRefPtr<GVariant> returnValue = adoptGRef(g_dbus_proxy_call_finish(G_DBUS_PROXY(proxy), result, &error.outPtr()));
++            if (error)
++                g_warning("Calling %s.UnInhibit failed: %s", g_dbus_proxy_get_interface_name(G_DBUS_PROXY(proxy)), error->message);
++        }, nullptr);
++        return;
++    }
++
++    ASSERT(m_inhibitPortalRequestObjectPath);
++    ASSERT(m_inhibitPortalProxy);
++
++    g_dbus_proxy_new_for_bus(G_BUS_TYPE_SESSION, static_cast<GDBusProxyFlags>(G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS),
++        nullptr, "org.freedesktop.portal.Desktop", m_inhibitPortalRequestObjectPath.get(), "org.freedesktop.portal.Request", nullptr,
++        [](GObject*, GAsyncResult* result, gpointer) {
++            GUniqueOutPtr<GError> error;
++            GRefPtr<GDBusProxy> requestProxy = adoptGRef(g_dbus_proxy_new_for_bus_finish(result, &error.outPtr()));
++            if (error) {
++                g_warning("Failed to create org.freedesktop.portal.Request proxy: %s", error->message);
++                return;
++            }
++
++            ASSERT(requestProxy);
++            g_dbus_proxy_call(requestProxy.get(), "Close", g_variant_new("()"), G_DBUS_CALL_FLAGS_NONE, -1, nullptr,
++                [](GObject* proxy, GAsyncResult* result, gpointer) {
++                    GUniqueOutPtr<GError> error;
++                    GRefPtr<GVariant> returnValue = adoptGRef(g_dbus_proxy_call_finish(G_DBUS_PROXY(proxy), result, &error.outPtr()));
++                    if (error)
++                        g_warning("Calling %s.Close failed: %s", g_dbus_proxy_get_interface_name(G_DBUS_PROXY(proxy)), error->message);
++                }, nullptr);
++        }, nullptr);
++}
++
++} // namespace PAL
+diff --git a/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.h b/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.h
+new file mode 100644
+index 00000000000..d7a2f152228
+--- /dev/null
++++ b/Source/WebCore/PAL/pal/system/gtk/SleepDisablerGtk.h
+@@ -0,0 +1,56 @@
++/*
++ * Copyright (C) 2017 Igalia S.L.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY APPLE INC. AND ITS CONTRIBUTORS ``AS IS''
++ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
++ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL APPLE INC. OR ITS CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
++ * THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#pragma once
++
++#include "SleepDisabler.h"
++
++#include <gio/gio.h>
++#include <wtf/glib/GRefPtr.h>
++#include <wtf/glib/GUniquePtr.h>
++#include <wtf/text/CString.h>
++
++namespace PAL {
++
++class SleepDisablerGtk : public SleepDisabler {
++public:
++    SleepDisablerGtk(const char*, Type);
++    virtual ~SleepDisablerGtk();
++
++private:
++    void acquireInhibitor();
++    void releaseInhibitor();
++
++    GRefPtr<GDBusProxy> m_screenSaverProxy { nullptr };
++    unsigned m_screenSaverCookie { 0 };
++
++    GRefPtr<GDBusProxy> m_inhibitPortalProxy { nullptr };
++    GUniqueOutPtr<char> m_inhibitPortalRequestObjectPath;
++
++    GRefPtr<GCancellable> m_cancellable { nullptr };
++    CString m_reason;
++};
++
++} // namespace PAL
+diff --git a/Source/WebCore/html/HTMLMediaElement.cpp b/Source/WebCore/html/HTMLMediaElement.cpp
+index 04f9da96c5b..b37a13ec1e4 100644
+--- a/Source/WebCore/html/HTMLMediaElement.cpp
++++ b/Source/WebCore/html/HTMLMediaElement.cpp
+@@ -6607,6 +6607,11 @@ void HTMLMediaElement::updateSleepDisabling()
+ 
+ HTMLMediaElement::SleepType HTMLMediaElement::shouldDisableSleep() const
+ {
++    // FIXME: This #if should be removed, because GTK now supports SleepDisabler, and because this
++    // code is harmless on ports where SleepDisabler does nothing. However, after brief testing on
++    // YouTube, I noticed that sleep is not disabled during normal video playback, but it *is*
++    // disabled when a page playing video enters the page cache, until the associated web view is
++    // destroyed. Keep it Cocoa-only for now, so that cached pages don't block sleep indefinitely.
+ #if !PLATFORM(COCOA)
+     return SleepType::None;
+ #endif
+diff --git a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
+index d27ab40130a..9e0f7e501d7 100644
+--- a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
++++ b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
+@@ -63,6 +63,7 @@
+ #include <gdk/gdkkeysyms.h>
+ #include <glib/gi18n-lib.h>
+ #include <memory>
++#include <pal/system/SleepDisabler.h>
+ #include <wtf/HashMap.h>
+ #include <wtf/glib/GRefPtr.h>
+ #include <wtf/glib/WTFGType.h>
+@@ -190,9 +191,7 @@ struct _WebKitWebViewBasePrivate {
+ 
+ #if ENABLE(FULLSCREEN_API)
+     bool fullScreenModeActive { false };
+-    GRefPtr<GDBusProxy> screenSaverProxy;
+-    GRefPtr<GCancellable> screenSaverInhibitCancellable;
+-    unsigned screenSaverCookie { 0 };
++    std::unique_ptr<PAL::SleepDisabler> sleepDisabler { nullptr };
+ #endif
+ 
+     std::unique_ptr<AcceleratedBackingStore> acceleratedBackingStore;
+@@ -500,7 +499,6 @@ void webkitWebViewBaseChildMoveResize(WebKitWebViewBase* webView, GtkWidget* chi
+ static void webkitWebViewBaseDispose(GObject* gobject)
+ {
+     WebKitWebViewBase* webView = WEBKIT_WEB_VIEW_BASE(gobject);
+-    g_cancellable_cancel(webView->priv->screenSaverInhibitCancellable.get());
+     webkitWebViewBaseSetToplevelOnScreenWindow(webView, nullptr);
+     webView->priv->pageProxy->close();
+     webView->priv->acceleratedBackingStore = nullptr;
+@@ -1231,75 +1229,6 @@ void webkitWebViewBaseForwardNextWheelEvent(WebKitWebViewBase* webkitWebViewBase
+     webkitWebViewBase->priv->shouldForwardNextWheelEvent = true;
+ }
+ 
+-#if ENABLE(FULLSCREEN_API)
+-static void screenSaverInhibitedCallback(GDBusProxy* screenSaverProxy, GAsyncResult* result, WebKitWebViewBase* webViewBase)
+-{
+-    GRefPtr<GVariant> returnValue = adoptGRef(g_dbus_proxy_call_finish(screenSaverProxy, result, nullptr));
+-    if (returnValue)
+-        g_variant_get(returnValue.get(), "(u)", &webViewBase->priv->screenSaverCookie);
+-    webViewBase->priv->screenSaverInhibitCancellable = nullptr;
+-}
+-
+-static void webkitWebViewBaseSendInhibitMessageToScreenSaver(WebKitWebViewBase* webViewBase)
+-{
+-    WebKitWebViewBasePrivate* priv = webViewBase->priv;
+-    ASSERT(priv->screenSaverProxy);
+-    priv->screenSaverCookie = 0;
+-    if (!priv->screenSaverInhibitCancellable)
+-        priv->screenSaverInhibitCancellable = adoptGRef(g_cancellable_new());
+-    g_dbus_proxy_call(priv->screenSaverProxy.get(), "Inhibit", g_variant_new("(ss)", g_get_prgname(), _("Website running in fullscreen mode")),
+-        G_DBUS_CALL_FLAGS_NONE, -1, priv->screenSaverInhibitCancellable.get(), reinterpret_cast<GAsyncReadyCallback>(screenSaverInhibitedCallback), webViewBase);
+-}
+-
+-static void screenSaverProxyCreatedCallback(GObject*, GAsyncResult* result, WebKitWebViewBase* webViewBase)
+-{
+-    // WebKitWebViewBase cancels the proxy creation on dispose, which means this could be called
+-    // after the web view has been destroyed and g_dbus_proxy_new_for_bus_finish will return nullptr.
+-    // So, make sure we don't use the web view unless we have a valid proxy.
+-    // See https://bugs.webkit.org/show_bug.cgi?id=151653.
+-    GRefPtr<GDBusProxy> proxy = adoptGRef(g_dbus_proxy_new_for_bus_finish(result, nullptr));
+-    if (!proxy)
+-        return;
+-
+-    webViewBase->priv->screenSaverProxy = proxy;
+-    webkitWebViewBaseSendInhibitMessageToScreenSaver(webViewBase);
+-}
+-
+-static void webkitWebViewBaseInhibitScreenSaver(WebKitWebViewBase* webViewBase)
+-{
+-    WebKitWebViewBasePrivate* priv = webViewBase->priv;
+-    if (priv->screenSaverCookie) {
+-        // Already inhibited.
+-        return;
+-    }
+-
+-    if (priv->screenSaverProxy) {
+-        webkitWebViewBaseSendInhibitMessageToScreenSaver(webViewBase);
+-        return;
+-    }
+-
+-    priv->screenSaverInhibitCancellable = adoptGRef(g_cancellable_new());
+-    g_dbus_proxy_new_for_bus(G_BUS_TYPE_SESSION, static_cast<GDBusProxyFlags>(G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS),
+-        nullptr, "org.freedesktop.ScreenSaver", "/ScreenSaver", "org.freedesktop.ScreenSaver", priv->screenSaverInhibitCancellable.get(),
+-        reinterpret_cast<GAsyncReadyCallback>(screenSaverProxyCreatedCallback), webViewBase);
+-}
+-
+-static void webkitWebViewBaseUninhibitScreenSaver(WebKitWebViewBase* webViewBase)
+-{
+-    WebKitWebViewBasePrivate* priv = webViewBase->priv;
+-    if (!priv->screenSaverCookie) {
+-        // Not inhibited or it's being inhibited.
+-        g_cancellable_cancel(priv->screenSaverInhibitCancellable.get());
+-        return;
+-    }
+-
+-    // If we have a cookie we should have a proxy.
+-    ASSERT(priv->screenSaverProxy);
+-    g_dbus_proxy_call(priv->screenSaverProxy.get(), "UnInhibit", g_variant_new("(u)", priv->screenSaverCookie), G_DBUS_CALL_FLAGS_NONE, -1, nullptr, nullptr, nullptr);
+-    priv->screenSaverCookie = 0;
+-}
+-#endif
+-
+ void webkitWebViewBaseEnterFullScreen(WebKitWebViewBase* webkitWebViewBase)
+ {
+ #if ENABLE(FULLSCREEN_API)
+@@ -1314,7 +1243,8 @@ void webkitWebViewBaseEnterFullScreen(WebKitWebViewBase* webkitWebViewBase)
+         gtk_window_fullscreen(GTK_WINDOW(topLevelWindow));
+     fullScreenManagerProxy->didEnterFullScreen();
+     priv->fullScreenModeActive = true;
+-    webkitWebViewBaseInhibitScreenSaver(webkitWebViewBase);
++    priv->sleepDisabler = PAL::SleepDisabler::create(_("Website running in fullscreen mode"), PAL::SleepDisabler::Type::Display);
++g_warning("%s: Created a sleep disabler!", __FUNCTION__);
+ #endif
+ }
+ 
+@@ -1332,7 +1262,8 @@ void webkitWebViewBaseExitFullScreen(WebKitWebViewBase* webkitWebViewBase)
+         gtk_window_unfullscreen(GTK_WINDOW(topLevelWindow));
+     fullScreenManagerProxy->didExitFullScreen();
+     priv->fullScreenModeActive = false;
+-    webkitWebViewBaseUninhibitScreenSaver(webkitWebViewBase);
++    priv->sleepDisabler = nullptr;
++g_warning("%s: Destroyed the almighty sleep disabler!", __FUNCTION__);
+ #endif
+ }
+ 
+-- 
+2.14.3
+
