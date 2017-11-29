@@ -758,7 +758,7 @@
             ]
         },
         {
-            "name": "webkitgtk4",
+            "name": "webkitgtk3",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "buildsystem": "cmake",
             "build-options" : {
