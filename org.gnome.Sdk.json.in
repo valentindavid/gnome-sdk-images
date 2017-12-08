@@ -310,6 +310,7 @@
         },
         {
             "name": "at-spi2-core",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
