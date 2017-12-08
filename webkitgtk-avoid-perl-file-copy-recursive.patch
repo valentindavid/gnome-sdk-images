@@ -1,0 +1,18 @@
+Index: /Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
+===================================================================
+--- a/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
++++ b/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
+@@ -47,4 +47,13 @@
+     } elsif ($^O eq 'darwin') {
+         system('ditto', $source, $destination);
++    } elsif ($^O ne 'MSWin32') {
++        # Ditto copies the *contents* of the source directory, not the directory itself.
++        opendir(my $dh, $source) or die "Can't open $source: $!";
++        while (readdir $dh) {
++            if ($_ ne '..' and $_ ne '.') {
++                system('cp', '-R', "${source}/$_", $destination) or die "Failed to copy ${source}/$_ to $destination: $!";
++            }
++        }
++        closedir $dh;
+     } else {
+         die "Please install the PEP module File::Copy::Recursive";

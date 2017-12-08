@@ -799,6 +799,10 @@
                 {
                     "type": "patch",
                     "path": "webkitgtk-idle-inhibitor-debugging.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "webkitgtk-avoid-perl-file-copy-recursive.patch"
                 }
             ]
         },
