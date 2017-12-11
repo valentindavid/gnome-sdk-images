@@ -311,6 +311,10 @@
         {
             "name": "at-spi2-core",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/at-spi2-core.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/at-spi2-core-*.mo"
+            ],
             "sources": [
                 {
                     "type": "git",
