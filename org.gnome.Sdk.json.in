@@ -368,7 +368,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/librsvg",
+                    "url": "https://gitlab.gnome.org/GNOME/librsvg.git",
                     "branch": "librsvg-2-40"
                 }
             ]
