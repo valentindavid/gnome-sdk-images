@@ -763,7 +763,7 @@
             ]
         },
         {
-            "name": "webkitgtk3",
+            "name": "WebKitGTK+",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "buildsystem": "cmake",
             "build-options" : {
@@ -798,16 +798,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.3.tar.xz",
-                    "sha256": "dc6ab3bddbfffbab5a5ec14d81cfe263e0a11cc07c0b0e4aeb70afc46c06f752"
-                },
-                {
-                    "type": "patch",
-                    "path": "webkitgtk-disable-SharedArrayBuffers.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "webkitgtk-reduce-timer-precision.patch"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.4.tar.xz",
+                    "sha256": "5dc3379079a2c12e356fa979adf799970eb9ff385ba75c4358728242b3c5a5e0"
                 }
             ]
         },
