@@ -793,8 +793,9 @@
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
                 "-DENABLE_MINIBROWSER=ON",
-                "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */,
-                "-DDEVELOPER_MODE=ON" /* HACK: https://bugs.webkit.org/show_bug.cgi?id=181438 */
+                "-DfollowinglineisaHACKforwebkitbug181438",
+                "-DDEVELOPER_MODE=ON",
+                "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */
             ],
             "sources": [
                 {
