@@ -793,7 +793,6 @@
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
                 "-DENABLE_MINIBROWSER=ON",
-                "-DDEVELOPER_MODE=ON",
                 "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */
             ],
             "sources": [
