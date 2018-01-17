@@ -798,12 +798,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.5.tar.xz",
-                    "sha256": "5dc3379079a2c12e356fa979adf799970eb9ff385ba75c4358728242b3c5a5e0"
-                },
-                {
-                    "type": "patch",
-                    "path": "webkitgtk-fix-jsc-api-crash.patch"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.6.tar.xz",
+                    "sha256": "c97c87a0db3814f97812edeadc79c330affa51eb43dadbdc7a764b01db38d82b"
                 }
             ]
         },
