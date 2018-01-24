@@ -619,11 +619,11 @@
             ]
         },
         {
-            "name": "gnome-themes-standard",
+            "name": "gnome-themes-extra",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gnome-themes-standard"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-themes-extra.git"
                 }
             ]
         },
