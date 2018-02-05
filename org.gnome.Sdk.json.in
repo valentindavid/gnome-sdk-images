@@ -609,8 +609,7 @@
         },
         {
             "name": "gcab",
-            "config-opts": ["--disable-static", "--enable-fast-install"],
-            "no-parallel-make": true,
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
