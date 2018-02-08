@@ -116,7 +116,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/glib"
+                    "url": "https://gitlab.gnome.org/GNOME/glib.git"
                 }
             ]
         },
