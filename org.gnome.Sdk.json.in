@@ -372,7 +372,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gtk+",
+                    "url": "https://gitlab.gnome.org/GNOME/gtk.git",
                     "branch": "gtk-2-24"
                 }
             ]
@@ -396,7 +396,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gtk+",
+                    "url": "https://gitlab.gnome.org/GNOME/gtk.git",
                     "branch": "gtk-3-22"
                 }
             ]
