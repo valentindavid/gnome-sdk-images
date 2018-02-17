@@ -131,7 +131,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gobject-introspection"
+                    "url": "https://gitlab.gnome.org/GNOME/gobject-introspection.git"
                 }
             ]
         },
