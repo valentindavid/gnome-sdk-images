@@ -314,25 +314,21 @@
         },
         {
             "name": "at-spi2-core",
-            "buildsystem": "meson",
-            "ensure-writable": [
-                "/share/locale/*/LC_MESSAGES/at-spi2-core.mo",
-                "/share/runtime/locale/*/share/*/LC_MESSAGES/at-spi2-core-*.mo"
-            ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/at-spi2-core"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/at-spi2-core/2.26/at-spi2-core-2.26.2.tar.xz",
+                    "sha256": "c80e0cdf5e3d713400315b63c7deffa561032a6c37289211d8afcfaa267c2615"
                 }
             ]
         },
         {
             "name": "at-spi2-atk",
-            "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/at-spi2-atk"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/at-spi2-atk/2.26/at-spi2-atk-2.26.1.tar.xz",
+                    "sha256": "b4f0c27b61dbffba7a5b5ba2ff88c8cee10ff8dac774fa5b79ce906853623b75"
                 }
             ]
         },
