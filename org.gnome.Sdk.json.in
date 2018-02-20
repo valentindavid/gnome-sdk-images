@@ -91,15 +91,15 @@
         },
         {
             "name": "cantarell-fonts",
-            "buildsystem": "meson",
-            "config-opts": [ "-Duseprebuilt=true"],
+            "config-opts": [ "--disable-source-rebuild"],
             "post-install": [
                 "ln -s /usr/share/fontconfig/conf.avail/31-cantarell.conf /etc/fonts/conf.d/31-cantarell.conf"
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/cantarell-fonts"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/cantarell-fonts/0.0/cantarell-fonts-0.0.25.tar.xz",
+                    "sha256": "14a228aa0b516dfc367b434a850f955a00c57fc549cbb05348e2b150196a737f"
                 }
             ]
         },
