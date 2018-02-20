@@ -284,6 +284,16 @@
             ]
         },
         {
+            "name": "fribidi",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/fribidi/fribidi.git"
+                }
+            ]
+        },
+        {
             "name": "pango",
             "sources": [
                 {
