@@ -244,8 +244,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://linux.thai.net/pub/thailinux/software/libthai/libdatrie-0.2.9.tar.xz",
-                    "sha256": "d980713e7ad8e19cf3b54ee0173782b94332af8e7e4e936dde01d2cd72e1da1d"
+                    "url": "https://linux.thai.net/pub/thailinux/software/libthai/libdatrie-0.2.10.tar.xz",
+                    "sha256": "180eff7b0309ca19a02d5864e744185d715f021398a096fec6cf960f8ebfaa2b"
                 }
             ]
         },
@@ -255,8 +255,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://linux.thai.net/pub/thailinux/software/libthai/libthai-0.1.22.tar.xz",
-                    "sha256": "bdb291dcc3a6784e86b1b342ec75005e9ab487f8c1decc7c3e7d18d1bbc9b7b7"
+                    "url": "https://linux.thai.net/pub/thailinux/software/libthai/libthai-0.1.27.tar.xz",
+                    "sha256": "1659fa1b7b1d6562102d7feb8c8c3fd94bb2dc5761ed7dbaae4f300e1c03eff6"
                 }
             ]
         },
