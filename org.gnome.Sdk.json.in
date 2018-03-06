@@ -791,14 +791,13 @@
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
-                "-DENABLE_MINIBROWSER=ON",
-                "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */
+                "-DENABLE_MINIBROWSER=ON"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.91.tar.xz",
-                    "sha256": "cc1ccc8522bc44e05bf2a7f25b486758298e9ebfbad09fd8a0b5909e45c35c93"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.92.tar.xz",
+                    "sha256": "22b79a525376d09e7a6acc8becffabbac1759906592375767216b9b2c0d871e8"
                 }
             ]
         },
