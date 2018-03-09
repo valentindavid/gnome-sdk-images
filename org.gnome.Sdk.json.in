@@ -76,8 +76,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/yelp-xsl/3.20/yelp-xsl-3.20.1.tar.xz",
-                    "sha256": "dc61849e5dca473573d32e28c6c4e3cf9c1b6afe241f8c26e29539c415f97ba0"
+                    "url": "https://download.gnome.org/sources/yelp-xsl/3.27/yelp-xsl-3.27.90.tar.xz",
+                    "sha256": "812d67e4f7fb988a54a3a030bef5ad0ac1a3647ec09ef8b7a017936d9ae69f49"
                 }
             ]
         },
@@ -87,22 +87,23 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/yelp-tools/3.18/yelp-tools-3.18.0.tar.xz",
-                    "sha256": "c6c1d65f802397267cdc47aafd5398c4b60766e0a7ad2190426af6c0d0716932"
+                    "url": "https://download.gnome.org/sources/yelp-tools/3.27/yelp-tools-3.27.90.tar.xz",
+                    "sha256": "9d00bf5c0873159014c3703ad6a7ca8c9fb214f38c79ccec0dc42884463b3dd5"
                 }
             ]
         },
         {
             "name": "cantarell-fonts",
-            "config-opts": [ "--disable-source-rebuild"],
+            "buildsystem": "meson",
+            "config-opts": [ "-Duseprebuilt=true"],
             "post-install": [
                 "ln -s /usr/share/fontconfig/conf.avail/31-cantarell.conf /etc/fonts/conf.d/31-cantarell.conf"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/cantarell-fonts/0.0/cantarell-fonts-0.0.25.tar.xz",
-                    "sha256": "14a228aa0b516dfc367b434a850f955a00c57fc549cbb05348e2b150196a737f"
+                    "url": "https://download.gnome.org/sources/cantarell-fonts/0.100/cantarell-fonts-0.100.tar.xz",
+                    "sha256": "01ad69e855b81af7d6752d374301b8a55576f375a7a46eb58935d7f343cf0689"
                 }
             ]
         },
@@ -120,8 +121,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glib/2.54/glib-2.54.3.tar.xz",
-                    "sha256": "963fdc6685dc3da8e5381dfb9f15ca4b5709b28be84d9d05a9bb8e446abac0a8"
+                    "url": "https://download.gnome.org/sources/glib/2.55/glib-2.55.2.tar.xz",
+                    "sha256": "5a26bfa83bb412d181504a0773101093c9e538c3d0e09d30f5178885d78e72f6"
                  }
             ]
         },
@@ -136,8 +137,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://download.gnome.org/sources/gobject-introspection/1.54/gobject-introspection-1.54.1.tar.xz",
-                     "sha256": "b88ded5e5f064ab58a93aadecd6d58db2ec9d970648534c63807d4f9a7bb877e"
+                     "url": "https://download.gnome.org/sources/gobject-introspection/1.55/gobject-introspection-1.55.2.tar.xz",
+                     "sha256": "5f058ea7853ede3ef6e62fe19917d794f0d03de7f642d430277a54946c10e31e"
                  }
             ]
         },
@@ -149,8 +150,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.38/vala-0.38.2.tar.xz",
-                    "sha256": "20d5d9c4fbd17877969dbce27e6428da67138e116b1717cc07b5b75fd6ab78a7"
+                    "url": "https://download.gnome.org/sources/vala/0.39/vala-0.39.92.tar.xz",
+                    "sha256": "4a9f4f015b42700907e61ff2d528cc28f30da33991d5fbb277a35c67ea189ed9"
                 },
                 {
                     "type": "patch",
@@ -180,14 +181,28 @@
             ]
         },
         {
-            "name": "glib-networking",
-            "config-opts": ["--disable-static", "--with-libproxy"],
+            "name": "gsettings-desktop-schemas",
             "sources": [
-                 {
-                     "type": "archive",
-                     "url": "https://download.gnome.org/sources/glib-networking/2.54/glib-networking-2.54.0.tar.xz",
-                     "sha256": "5961b3779080b72314b373ff5d4790eb7e41b75ca91816ad7a81ef32922f7096"
-                 }
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gsettings-desktop-schemas/3.27/gsettings-desktop-schemas-3.27.92.tar.xz",
+                    "sha256": "b397c219d0edc0698c65f3e619e9d227ff06667546c4414a9425f951dea6bf2d"
+                }
+            ]
+        },
+        {
+            "name": "glib-networking",
+            "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/glib-networking/2.55/glib-networking-2.55.90.tar.xz",
+                    "sha256": "ff0e5bd686d0b956f335d7a0188e8cbebeddf5ade934601d959457d07e34cb08"
+                }
             ]
         },
         {
@@ -196,18 +211,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsoup/2.60/libsoup-2.60.0.tar.xz",
-                    "sha256": "b324edbecda0884143c0853b4a2bd5bd37fb3761f12f293c621ff34b9acdc84c"
-                }
-            ]
-        },
-        {
-            "name": "gsettings-desktop-schemas",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gsettings-desktop-schemas/3.24/gsettings-desktop-schemas-3.24.1.tar.xz",
-                    "sha256": "76a3fa309f9de6074d66848987214f0b128124ba7184c958c15ac78a8ac7eea7"
+                    "url": "https://download.gnome.org/sources/libsoup/2.61/libsoup-2.61.91.tar.xz",
+                    "sha256": "13314e6b96f4c6fc1c68905514283a867adb36bf471add0b8e64e565dae646d1"
                 }
             ]
         },
@@ -217,8 +222,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.108.tar.gz",
-                    "sha256": "9f340c7e2352e9cdf113893ca77ca9075d9f8d5e81476bf2bf361099383c602c"
+                    "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz",
+                    "sha256": "7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825"
                 }
             ]
         },
@@ -239,31 +244,34 @@
         },
         {
             "name": "atk",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/atk/2.26/atk-2.26.0.tar.xz",
-                    "sha256": "eafe49d5c4546cb723ec98053290d7e0b8d85b3fdb123938213acb7bb4178827"
+                    "url": "https://download.gnome.org/sources/atk/2.27/atk-2.27.1.tar.xz",
+                    "sha256": "673a953987b301ab1e24e7d11677b6e7ba3226411a168449ba946765b6d44297"
                 }
             ]
         },
         {
             "name": "at-spi2-core",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/at-spi2-core/2.26/at-spi2-core-2.26.0.tar.xz",
-                    "sha256": "511568a65fda11fdd5ba5d4adfd48d5d76810d0e6ba4f7460f1b2ec0dbbbc337"
+                    "url": "https://download.gnome.org/sources/at-spi2-core/2.27/at-spi2-core-2.27.92.tar.xz",
+                    "sha256": "20d647fd1c0a5b982e816e31fd3f83fa271ecc764f402a1497e951c2d49cb581"
                 }
             ]
         },
         {
             "name": "at-spi2-atk",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/at-spi2-atk/2.26/at-spi2-atk-2.26.0.tar.xz",
-                    "sha256": "d25e528e1406a10c7d9b675aa15e638bcbf0a122ca3681f655a30cce83272fb9"
+                    "url": "https://download.gnome.org/sources/at-spi2-atk/2.26/at-spi2-atk-2.26.1.tar.xz",
+                    "sha256": "b4f0c27b61dbffba7a5b5ba2ff88c8cee10ff8dac774fa5b79ce906853623b75"
                 }
             ]
         },
@@ -310,8 +318,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.26/adwaita-icon-theme-3.26.0.tar.xz",
-                    "sha256": "9cad85de19313f5885497aceab0acbb3f08c60fcd5fa5610aeafff37a1d12212"
+                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.27/adwaita-icon-theme-3.27.90.tar.xz",
+                    "sha256": "dae133e040c304539f7071b880eb4ca54ce6ea9d6d40bb1824d990b87ab7aa15"
                 }
             ]
         },
@@ -321,8 +329,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.12.3.tar.xz",
-                     "sha256": "d388f492440897f02b01eebb033ca2d41078a3d85c0eddc030cdea5a337a216e"
+                     "url": "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.12.4.tar.xz",
+                     "sha256": "5a8704aa4c2eeb04da192c4a9942f94f860ac1a585de90d9f914bac26a970674"
                  }
             ],
             "build-commands": [
@@ -346,8 +354,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.12.3.tar.xz",
-                     "sha256": "d3d37b8489d37fa0018973d850bd2067b98af335fef2fa543ee7d40359e3cea5"
+                     "url": "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.12.4.tar.xz",
+                     "sha256": "4c306b03df0212f1b8903784e29bb3493319ba19ebebf13b0c56a17870292282"
                  }
             ]
         },
@@ -379,8 +387,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/clutter/1.26/clutter-1.26.0.tar.xz",
-                    "sha256": "67514e7824b3feb4723164084b36d6ce1ae41cb3a9897e9f1a56c8334993ce06"
+                    "url": "https://download.gnome.org/sources/clutter/1.26/clutter-1.26.2.tar.xz",
+                    "sha256": "e7233314983055e9018f94f56882e29e7fc34d8d35de030789fdcd9b2d0e2e56"
                 }
             ]
         },
@@ -396,11 +404,12 @@
         },
         {
             "name": "clutter-gtk",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.2.tar.xz",
-                    "sha256": "da27d486325490ad3f65d2abf9413aeb8b4a8f7b559e4b2f73567a5344a26b94"
+                    "url": "https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz",
+                    "sha256": "521493ec038973c77edcb8bc5eac23eed41645117894aaee7300b2487cb42b06"
                 }
             ]
         },
@@ -428,8 +437,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.12.3.tar.xz",
-                     "sha256": "36d059761852bed0f1a7fcd3ef64a8aeecab95d2bca53cd6aa0f08054b1cbfec"
+                     "url": "http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.12.4.tar.xz",
+                     "sha256": "0c7857be16686d5c1ba6e34bd338664d3d4599d32714a8eca5c8a41a101e2d08"
                  }
             ]
         },
@@ -440,8 +449,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.12.3.tar.xz",
-                     "sha256": "e88ca584c94ea78eeecbf3af00ef7f134b66bdee7408aa4aa6c547235e060052"
+                     "url": "http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.12.4.tar.xz",
+                     "sha256": "1c165b8d888ed350acd8e6ac9f6fe06508e6fcc0a3afc6ccc9fbeb30df9be522"
                  }
             ]
         },
@@ -493,8 +502,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gvfs/1.34/gvfs-1.34.1.tar.xz",
-                    "sha256": "7ef9b2aec234004271a575118a0e35b3c36ce3309e5f9da109635651843372b4"
+                    "url": "https://download.gnome.org/sources/gvfs/1.35/gvfs-1.35.92.tar.xz",
+                    "sha256": "e11899ca79643bfa56f2b479eab9e9677b9a2d495df40c0054b17d6df097aeb9"
                 }
             ]
         },
@@ -518,22 +527,22 @@
         },
         {
             "name": "gcab",
-            "config-opts": ["--disable-static", "--enable-fast-install"],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gcab/0.7/gcab-0.7.tar.xz",
-                    "sha256": "a16e5ef88f1c547c6c8c05962f684ec127e078d302549f3dfd2291e167d4adef"
+                    "url": "https://download.gnome.org/sources/gcab/1.1/gcab-1.1.tar.xz",
+                    "sha256": "192b2272c2adfde43595e5c62388854bca8a404bc796585b638e81774dd62950"
                 }
             ]
         },
         {
-            "name": "gnome-themes-standard",
+            "name": "gnome-themes-extra",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-themes-standard/3.22/gnome-themes-standard-3.22.3.tar.xz",
-                    "sha256": "61dc87c52261cfd5b94d65e8ffd923ddeb5d3944562f84942eeeb197ab8ab56a"
+                    "url": "https://download.gnome.org/sources/gnome-themes-standard/3.27/gnome-themes-standard-3.27.90.tar.xz",
+                    "sha256": "ffc7ccb5458ae4ef2501c49d84d3af150ca3b70c9b239e7ba6c05fe1405d31dc"
                 }
             ]
         },
@@ -572,8 +581,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gjs/1.50/gjs-1.50.1.tar.xz",
-                    "sha256": "41519fd63978745d17dbccb688a55f1850a7ba72f3c86274ca985d88dbff9fdf"
+                    "url": "https://download.gnome.org/sources/gjs/1.51/gjs-1.51.91.tar.xz",
+                    "sha256": "a24a5ce0c01369ea9f7154d630dceeff59627787cd9e3da3f409b3143c733f35"
                 }
             ]
         },
@@ -591,13 +600,42 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.50/vte-0.50.1.tar.xz",
-                    "sha256": "cf1708e3e573160e1db107014b3ef70888fefe6b668373fed70e8d1cac45a8c2"
+                    "url": "https://download.gnome.org/sources/vte/0.51/vte-0.51.92.tar.xz",
+                    "sha256": "35dc78a66c0c1fa85cd34f074e1e0a198c74132c565bbd4b293fc1d5733df488"
                 }
             ]
         },
         {
-            "name": "webkitgtk4",
+            "name": "brotli",
+            "buildsystem": "cmake",
+            "config-opts": [
+                "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/google/brotli/archive/v1.0.1.tar.gz",
+                    "sha256": "6870f9c2c63ef58d7da36e5212a3e1358427572f6ac5a8b5a73a815cf3e0c4a6"
+                }
+            ]
+        },
+        {   "name": "woff2",
+            "buildsystem": "cmake",
+            "config-opts": [
+                "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/google/woff2/archive/v1.0.2/woff2-1.0.2.tar.gz",
+                    "sha256": "add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594"
+                }
+            ]
+        },
+        {
+            "name": "WebKitGTK+",
             "cleanup-platform": [ "/libexec/webkit2gtk-4.0/MiniBrowser" ],
             "buildsystem": "cmake",
             "build-options" : {
@@ -620,30 +658,20 @@
             "config-opts": [
                 "-DPORT=GTK",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG",
-                "-DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG",
-                "-DENABLE_ACCELERATED_2D_CANVAS=OFF",
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
                 "-DLIB_INSTALL_DIR:PATH=/usr/lib",
                 "-DSYSCONF_INSTALL_DIR:PATH=/usr/etc",
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
-                "-DBUILD_SHARED_LIBS:BOOL=ON",
-                "-DENABLE_GTKDOC=OFF",
-                "-DENABLE_VIDEO=ON",
-                "-DENABLE_WEB_AUDIO=ON",
-                "-DENABLE_MINIBROWSER=ON"
+                "-DENABLE_MINIBROWSER=ON",
+                "-DUSE_UPOWER=OFF" /* FIXME: Timers will not be throttled on low power. */
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.18.6.tar.xz",
-                    "sha256": "93912cc2f40f12e452be1ca4babdbdaac0ec4f828d441257a6b06c2963bbac3c"
-                },
-                {
-                    "type": "patch",
-                    "path": "webkitgtk-cmake-buildapi.patch"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.19.90.tar.xz",
+                    "sha256": "18819bdf6660ce49609ca2bcc46572ae7a1fb657e1296adc4f199869ed43542b"
                 }
             ]
         },
@@ -652,8 +680,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/yelp/3.22/yelp-3.22.0.tar.xz",
-                    "sha256": "8616b77c239aaa731312609f192c9b2c71d54b2cae42ff23efa23b5b3188778e"
+                    "url": "https://download.gnome.org/sources/yelp/3.27/yelp-3.27.1.tar.xz",
+                    "sha256": "fdc845aa62369ed51f05e9b9c6bf2909dceb68e56ae7c7480a7b348d028d7139"
                 },
                 {
                     "type": "patch",
@@ -676,8 +704,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/pygobject/pycairo/releases/download/v1.14.1/pycairo-1.14.1.tar.gz",
-                    "sha256": "0d13a0a6eeaf0c357db04392943eb9b25767445608d31dde1307f003f68c5754"
+                    "url": "https://github.com/pygobject/pycairo/releases/download/v1.16.3/pycairo-1.16.3.tar.gz",
+                    "sha256": "5bb321e5d4f8b3a51f56fc6a35c143f1b72ce0d748b43d8b623596e8215f01f7"
                 }
             ]
         },
@@ -692,8 +720,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/pygobject/3.26/pygobject-3.26.0.tar.xz",
-                    "sha256": "7411acd600c8cb6f00d2125afa23303f2104e59b83e0a4963288dbecc3b029fa"
+                    "url": "https://download.gnome.org/sources/pygobject/3.27/pygobject-3.27.5.tar.xz",
+                    "sha256": "3e57f42a48f7e762a791ccec2514894945829dc1e70caeea0252505cbddbeda4"
                 }
             ]
         },
@@ -707,8 +735,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.12.3.tar.xz",
-                    "sha256": "c3f529dec1294633132690806703b80bad5752eff482eaf81f209c2aba012ba7"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.12.4.tar.xz",
+                    "sha256": "20ce6af6615c9a440c1928c31259a78226516d06bf1a65f888c6d109826fa3ea"
                 }
             ]
         },
@@ -719,8 +747,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gcr/3.20/gcr-3.20.0.tar.xz",
-                    "sha256": "90572c626d8a708225560c42b4421f7941315247fa1679d4ef569bde7f4bb379"
+                    "url": "https://download.gnome.org/sources/gcr/3.27/gcr-3.27.92.tar.xz",
+                    "sha256": "4d377011fe346c0d0f0d1edfb7d33ea68e0cce9a1284439c55ccf6b13a80e3e9"
+                },
+                {
+                    "type": "patch",
+                    "path": "gcr-gcrypt.patch"
                 },
                 {
                     "type": "shell",
@@ -731,7 +763,7 @@
         {
             "name": "ibus",
             "config-opts": ["--disable-xim", "--disable-static", "--disable-dconf", "--disable-schemas-compile",
-                            "--disable-setup", "--disable-ui", "--disable-engine", "--disable-libnotify", "--disable-emoji-dict",
+                            "--disable-setup", "--disable-ui", "--disable-engine", "--disable-libnotify", "--disable-emoji-dict", "--disable-unicode-dict",
                             "--disable-appindicator", "--disable-tests"],
             "cleanup": [
                 "/bin", "/libexec", "/share/bash-completion", "/share/dbus-1",
@@ -742,12 +774,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/ibus/ibus/releases/download/1.5.16/ibus-1.5.16.tar.gz",
-                    "sha256": "36b57bfbe4f92e3281fb535cae65794b6f25164b2a3288e73e6d06b4a409fe1e"
-                },
-                {
-                    "type": "patch",
-                    "path": "ibus-portal.patch"
+                    "url": "https://github.com/ibus/ibus/releases/download/1.5.18/ibus-1.5.18.tar.gz",
+                    "sha256": "8551f7d027fb65d48225642fc8f3b232412ea75a4eb375244dd72a4d73c2639e"
                 }
             ]
         },

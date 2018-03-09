@@ -8,7 +8,7 @@ FB_ARGS ?=
 # SDK_BRANCH:          The version (branch) of runtime and sdk to produce
 # SDK_RUNTIME_VERSION: The org.freedesktop.BaseSdk and platform version to build against
 #
-SDK_BRANCH=3.26
+SDK_BRANCH=3.28
 SDK_RUNTIME_VERSION=1.6
 
 # Canned recipe for generating metadata

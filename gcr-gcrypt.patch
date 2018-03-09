@@ -1,0 +1,21 @@
+diff -up gcr-1/configure.ac.gcrypt gcr-1/configure.ac
+--- gcr-1/configure.ac.gcrypt	2018-03-09 13:19:12.241651005 +0100
++++ gcr-1/configure.ac	2018-03-09 13:18:02.127790978 +0100
+@@ -194,16 +194,8 @@ AC_DEFINE_UNQUOTED([GPG_EXECUTABLE], ["$
+ 
+ GCRYPT_LIBVER=1
+ 
+-AM_PATH_LIBGCRYPT($GCRYPT_LIBVER:$GCRYPT_VERSION,,
+-	AC_MSG_ERROR([[
+-***
+-*** libgcrypt was not found. You may want to get it from
+-*** ftp://ftp.gnupg.org/gcrypt/libgcrypt/
+-***
+-]]))
+-libgcrypt=yes
+ AC_DEFINE_UNQUOTED(LIBGCRYPT_VERSION, "$GCRYPT_VERSION", [Version of GCRYPT we expect])
+-
++PKG_CHECK_MODULES(LIBGCRYPT,libgcrypt)
+ AC_SUBST([LIBGCRYPT_CFLAGS])
+ AC_SUBST([LIBGCRYPT_LIBS])
+ 
