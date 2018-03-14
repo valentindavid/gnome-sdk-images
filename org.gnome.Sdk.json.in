@@ -245,6 +245,10 @@
         {
             "name": "atk",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -256,6 +260,10 @@
         {
             "name": "at-spi2-core",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -267,6 +275,10 @@
         {
             "name": "at-spi2-atk",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
             "sources": [
                 {
                     "type": "archive",
