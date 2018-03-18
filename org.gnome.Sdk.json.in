@@ -558,6 +558,30 @@
             ]
         },
         {
+            "name": "gstreamer-libav",
+            "build-options" : {
+                "arch" : {
+                    "i386" : {
+                        "config-opts" : [
+                            "--build=i586-unknown-linux-gnu"
+                        ]
+                    },
+                    "arm" : {
+                        "config-opts" : [
+                            "--build=arm-unknown-linux-gnueabi"
+                        ]
+                    }
+                }
+            },
+            "config-opts": ["--with-system-libav" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://anongit.freedesktop.org/git/gstreamer/gst-libav.git"
+                }
+            ]
+        },
+        {
             "name": "libcanberra",
             "sources": [
                 {
