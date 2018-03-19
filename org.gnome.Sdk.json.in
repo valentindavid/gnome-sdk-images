@@ -565,6 +565,10 @@
         {
             "name": "gcab",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/*.mo"
+            ],
             "sources": [
                 {
                     "type": "archive",
