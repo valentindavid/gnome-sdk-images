@@ -121,8 +121,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glib/2.56/glib-2.56.0.tar.xz",
-                    "sha256": "ecef6e17e97b8d9150d0e8a4b3edee1ac37331213b8a2a87a083deea408a0fc7"
+                    "url": "https://download.gnome.org/sources/glib/2.56/glib-2.56.1.tar.xz",
+                    "sha256": "40ef3f44f2c651c7a31aedee44259809b6f03d3d20be44545cd7d177221c0b8d"
                  }
             ]
         },
@@ -137,8 +137,8 @@
             "sources": [
                  {
                      "type": "archive",
-                     "url": "https://download.gnome.org/sources/gobject-introspection/1.56/gobject-introspection-1.56.0.tar.xz",
-                     "sha256": "0d7059fad7aa5ec50d9678aea4ea139acab23737e9cf9ca0d86c615cecbaa0f8"
+                     "url": "https://download.gnome.org/sources/gobject-introspection/1.56/gobject-introspection-1.56.1.tar.xz",
+                     "sha256": "5b2875ccff99ff7baab63a34b67f8c920def240e178ff50add809e267d9ea24b"
                  }
             ]
         },
@@ -150,8 +150,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vala/0.40/vala-0.40.0.tar.xz",
-                    "sha256": "15888fcb5831917cd67367996407b28fdfc6cd719a30e6a8de38a952a8a48e71"
+                    "url": "https://download.gnome.org/sources/vala/0.40/vala-0.40.3.tar.xz",
+                    "sha256": "6d4f1f0b2edaa0d4aa96f72735a9845e6b1acf80a0a2ae494b5d43e07833119e"
                 },
                 {
                     "type": "patch",
@@ -211,8 +211,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsoup/2.62/libsoup-2.62.0.tar.xz",
-                    "sha256": "ab7c7ae8d19d0a27ab3b6ae21599cec8c7f7b773b3f2b1090c5daf178373aaac"
+                    "url": "https://download.gnome.org/sources/libsoup/2.62/libsoup-2.62.1.tar.xz",
+                    "sha256": "f037ddac2e0f9b1c842a0060fa6119bea1d3b349a2c901283c961247e45883d7"
                 }
             ]
         },
@@ -539,8 +539,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gvfs/1.36/gvfs-1.36.0.tar.xz",
-                    "sha256": "9ec388afeb373a213f2cc489184f76a17ae273a000e8a4ec720c1995943256bb"
+                    "url": "https://download.gnome.org/sources/gvfs/1.36/gvfs-1.36.1.tar.xz",
+                    "sha256": "3840dff386c2c8a445337bea4ade0eb71339efaff8602767659fa2896792f026"
                 }
             ]
         },
@@ -582,8 +582,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-themes-extra/3.27/gnome-themes-extra-3.27.92.tar.xz",
-                    "sha256": "95711f95da892a0d5531a4a233546e14b123721ecd90e02a837f27e1d2d35c12"
+                    "url": "https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz",
+                    "sha256": "7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819"
                 }
             ]
         },
@@ -622,8 +622,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gjs/1.52/gjs-1.52.0.tar.xz",
-                    "sha256": "5524a045e5e1d34a2a510133c662f2685e15ce26ae2ed699fb5d131b6b04a4ca"
+                    "url": "https://download.gnome.org/sources/gjs/1.52/gjs-1.52.1.tar.xz",
+                    "sha256": "a8fc9a4991e2b5611d54029b623de2a62522342766e4011504f4f538764735e8"
                 }
             ]
         },
@@ -641,8 +641,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.52/vte-0.52.0.tar.xz",
-                    "sha256": "d5ae72dddd57af493afa10ca2a290f284e588021b0bd8aaaa63dbb75de7c0567"
+                    "url": "https://download.gnome.org/sources/vte/0.52/vte-0.52.1.tar.xz",
+                    "sha256": "b0fd4c34905adcb77a1c8a2e4fc1677c79f1115aaea49705b9c8976523386ad3"
                 }
             ]
         },
@@ -710,8 +710,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.20.0.tar.xz",
-                    "sha256": "57f640f720bd9a8a7207f3321cf803a15c2f207b4e7b75ff1be17bc1eeb00a3c"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.20.1.tar.xz",
+                    "sha256": "43e43285fa4e393080cc4fbd5ad8644749a75b1e0b811b230b63ae56806c8959"
                 }
             ]
         },
@@ -720,8 +720,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/yelp/3.27/yelp-3.27.1.tar.xz",
-                    "sha256": "fdc845aa62369ed51f05e9b9c6bf2909dceb68e56ae7c7480a7b348d028d7139"
+                    "url": "https://download.gnome.org/sources/yelp/3.28/yelp-3.28.1.tar.xz",
+                    "sha256": "e88a5d05af20e497c50430b36fb523f8fda79a986359a6b7bd25910a2d2e7c0c"
                 },
                 {
                     "type": "patch",
@@ -760,8 +760,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/pygobject/3.28/pygobject-3.28.0.tar.xz",
-                    "sha256": "42b47b261b45aedfc77e02e3c90a01cd74d6f86c3273c1860a054d531d606e5a"
+                    "url": "https://download.gnome.org/sources/pygobject/3.28/pygobject-3.28.2.tar.xz",
+                    "sha256": "ac443afd14fcb9ff5744b65d6e2b380e70510278404fb8684a9b9fb089e6f2ca"
                 }
             ]
         },
