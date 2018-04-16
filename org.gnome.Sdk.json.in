@@ -204,6 +204,15 @@
             ]
         },
         {
+            "name": "libpsl",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/rockdaboot/libpsl.git"
+                }
+            ]
+        },
+        {
             "name": "libsoup",
             "config-opts": ["--disable-static"],
             "sources": [
