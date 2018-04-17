@@ -205,7 +205,7 @@
         },
         {
             "name": "libpsl",
-            "config-opts": [ "--disable-static --disable-runtime --disable-builtin" ],
+            "config-opts": [ "--disable-static", "--disable-runtime", "--disable-builtin" ],
             "sources": [
                 {
                     "type": "git",
