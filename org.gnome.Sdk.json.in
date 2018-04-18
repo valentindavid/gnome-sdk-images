@@ -454,7 +454,7 @@
         },
         {
             "name": "gstreamer-plugins-base",
-            "config-opts": ["--enable-experimental", "--enable-orc" ],
+            "config-opts": ["--enable-experimental", "--enable-orc", "--disable-fatal-warnings" ],
             "sources": [
                 {
                     "type": "git",
@@ -535,7 +535,8 @@
                             "--enable-cairo",
                             "--disable-libcaca",
                             "--disable-jack",
-                            "--with-default-visualizer=autoaudiosink" ],
+                            "--with-default-visualizer=autoaudiosink",
+                            "--disable-fatal-warnings" ],
             "sources": [
                 {
                     "type": "git",
@@ -583,7 +584,7 @@
                     }
                 }
             },
-            "config-opts": ["--with-system-libav" ],
+            "config-opts": ["--with-system-libav", "--disable-fatal-warnings" ],
             "sources": [
                 {
                     "type": "git",
