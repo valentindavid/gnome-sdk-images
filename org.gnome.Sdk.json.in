@@ -625,7 +625,13 @@
             "name": "gvfs",
             "buildsystem": "meson",
             "cleanup": [ "/libexec/*", "/share/dbus-1/services/*", "/share/gvfs/mounts" ],
-            "config-opts": [ "-Dadmin=false", "-Ddnssd=false", "-Dgcr=false",  "-Dsftp=false" ],
+            "config-opts": [
+                "-Dadmin=false",
+                "-Ddnssd=false",
+                "-Dgcr=false",
+                "-Dsftp=false",
+                "-Dsystemduserunitdir=no"
+            ],
             "sources": [
                 {
                     "type": "git",
