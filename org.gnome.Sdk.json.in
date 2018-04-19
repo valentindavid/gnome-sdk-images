@@ -630,7 +630,8 @@
                 "-Ddnssd=false",
                 "-Dgcr=false",
                 "-Dsftp=false",
-                "-Dsystemduserunitdir=no"
+                "-Dsystemduserunitdir=no",
+                "-Dtmpfilesdir=no"
             ],
             "sources": [
                 {
