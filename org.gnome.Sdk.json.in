@@ -629,6 +629,7 @@
                 "-Dadmin=false",
                 "-Ddnssd=false",
                 "-Dgcr=false",
+                "-Dgudev=false",
                 "-Dsftp=false",
                 "-Dsystemduserunitdir=no",
                 "-Dtmpfilesdir=no"
