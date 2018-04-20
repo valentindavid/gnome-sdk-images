@@ -631,6 +631,7 @@
                 "-Dfuse=false",
                 "-Dgcr=false",
                 "-Dgudev=false",
+                "-Dlogind=false",
                 "-Dsftp=false",
                 "-Dsystemduserunitdir=no",
                 "-Dtmpfilesdir=no",
