@@ -627,6 +627,7 @@
             "cleanup": [ "/libexec/*", "/share/dbus-1/services/*", "/share/gvfs/mounts" ],
             "config-opts": [
                 "-Dadmin=false",
+                "-Dafc=false",
                 "-Ddnssd=false",
                 "-Dfuse=false",
                 "-Dgcr=false",
