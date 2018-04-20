@@ -633,7 +633,8 @@
                 "-Dgudev=false",
                 "-Dsftp=false",
                 "-Dsystemduserunitdir=no",
-                "-Dtmpfilesdir=no"
+                "-Dtmpfilesdir=no",
+                "-Dudisks2=false"
             ],
             "sources": [
                 {
