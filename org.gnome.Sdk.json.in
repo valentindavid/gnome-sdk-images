@@ -628,6 +628,7 @@
             "config-opts": [
                 "-Dadmin=false",
                 "-Ddnssd=false",
+                "-Dfuse=false",
                 "-Dgcr=false",
                 "-Dgudev=false",
                 "-Dsftp=false",
