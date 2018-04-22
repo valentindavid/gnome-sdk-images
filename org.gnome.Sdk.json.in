@@ -631,6 +631,7 @@
                 "-Ddnssd=false",
                 "-Dfuse=false",
                 "-Dgcr=false",
+                "-Dgoa=false",
                 "-Dgudev=false",
                 "-Dlogind=false",
                 "-Dsftp=false",
