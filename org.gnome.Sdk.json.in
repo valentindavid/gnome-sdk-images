@@ -628,6 +628,7 @@
             "config-opts": [
                 "-Dadmin=false",
                 "-Dafc=false",
+                "-Dbluray=false",
                 "-Ddnssd=false",
                 "-Dfuse=false",
                 "-Dgcr=false",
