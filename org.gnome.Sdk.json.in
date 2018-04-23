@@ -634,6 +634,7 @@
                 "-Dgcr=false",
                 "-Dgoa=false",
                 "-Dgudev=false",
+                "-Dlibusb=false",
                 "-Dlogind=false",
                 "-Dsftp=false",
                 "-Dsystemduserunitdir=no",
