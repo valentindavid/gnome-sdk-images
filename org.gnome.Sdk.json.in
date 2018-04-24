@@ -629,6 +629,7 @@
                 "-Dadmin=false",
                 "-Dafc=false",
                 "-Dbluray=false",
+                "-Dccda=false",
                 "-Ddnssd=false",
                 "-Dfuse=false",
                 "-Dgcr=false",
