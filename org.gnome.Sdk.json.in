@@ -316,6 +316,7 @@
         },
         {
             "name": "atk",
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
