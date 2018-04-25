@@ -641,6 +641,7 @@
                 "-Dlibusb=false",
                 "-Dlogind=false",
                 "-Dmtp=false",
+                "-Dnfs=false",
                 "-Dsftp=false",
                 "-Dsmb=false",
                 "-Dsystemduserunitdir=no",
