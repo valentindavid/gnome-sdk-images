@@ -15,8 +15,10 @@
         "org.freedesktop.Platform.Icontheme",
         "org.freedesktop.Platform.VAAPI.Intel",
         "org.freedesktop.Platform.ffmpeg",
-        "org.freedesktop.Sdk.Extension",
         "org.gtk.Gtk3theme"
+    ],
+    "inherit-sdk-extensions": [
+        "org.freedesktop.Sdk.Extension"
     ],
     "add-extensions": {
         "org.gnome.Sdk.Docs" : {
