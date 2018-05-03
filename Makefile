@@ -25,14 +25,14 @@ define subst-metadata
 	@echo "Done.";
 endef
 
-$(SUBST_FILES): $(patsubst %,%.in,$(SUBST_FILES))
-	$(call subst-metadata)
-
 all: ${REPO} $(patsubst %,%.in,$(SUBST_FILES))
 	$(call subst-metadata)
 	flatpak-builder --force-clean --require-changes --repo=${REPO} --arch=${ARCH} \
                         --subject="build of org.gnome.Sdk, `date`" \
                         ${EXPORT_ARGS} ${FB_ARGS} sdk org.gnome.Sdk.json
+
+$(SUBST_FILES): $(patsubst %,%.in,$(SUBST_FILES))
+	$(call subst-metadata)
 
 ${REPO}:
 	ostree  init --mode=archive-z2 --repo=${REPO}
