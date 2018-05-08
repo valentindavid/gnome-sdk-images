@@ -346,11 +346,15 @@
         },
         {
             "name": "gdk-pixbuf",
-            "ensure-writable": ["/lib/gdk-pixbuf-2.0/*/loaders.cache"],
-            "config-opts": ["--disable-static",
-                            "--without-x11",
-                            "--without-libjasper",
-                            "--with-included-loaders=png,jpeg" ],
+            "buildsystem": "meson",
+            "ensure-writable": [
+                "/lib/gdk-pixbuf-2.0/*/loaders.cache",
+                "/share/locale/*/LC_MESSAGES/gdk-pixbuf*.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/gdk-pixbuf*.mo"
+            ],
+            "config-opts": [ "-Ddocs=false",
+                             "-Dx11=false",
+                             "-Dbuiltin_loaders=png,jpeg"],
             "sources": [
                 {
                     "type": "git",
