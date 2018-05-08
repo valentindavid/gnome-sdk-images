@@ -681,6 +681,10 @@
         {
             "name": "gcab",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/gcab.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/gcab.mo"
+            ],
             "sources": [
                 {
                     "type": "git",
