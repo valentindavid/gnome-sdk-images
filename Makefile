@@ -30,6 +30,9 @@ all: ${REPO} $(patsubst %,%.in,$(SUBST_FILES))
                         --subject="build of org.gnome.Sdk, `date`" \
                         ${EXPORT_ARGS} sdk org.gnome.Sdk.json
 
+$(SUBST_FILES): $(patsubst %,%.in,$(SUBST_FILES))
+	$(call subst-metadata)
+
 ${REPO}:
 	ostree  init --mode=archive-z2 --repo=${REPO}
 
