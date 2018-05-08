@@ -588,6 +588,7 @@
             "config-opts": ["--with-system-libav", "--disable-fatal-warnings" ],
             "sources": [
                 {
+                    "disable-shallow-clone": true,
                     "type": "git",
                     "url": "https://anongit.freedesktop.org/git/gstreamer/gst-libav.git"
                 }
