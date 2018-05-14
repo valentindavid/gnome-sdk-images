@@ -38,7 +38,12 @@
                  "/share/gtk-doc/html",
                  "/lib/systemd",
                  "*.la", "*.a"],
-    "cleanup-commands": [ "update-desktop-database" ],
+    "cleanup-commands": [ "update-desktop-database",
+
+                          "touch -d @0 /usr/share/fonts /usr/share/fonts/*",
+                          "fc-cache -rs",
+                          "ldconfig -C /usr/etc/ld.so.cache"
+                        ],
     /* usr libexec freedesktop-post.sh */
     "cleanup-platform": [ "/share/runtime/docs",
                           "/include",
@@ -48,7 +53,11 @@
                           "/share/gir-1.0",
                           "/share/vala"
                         ],
-    "cleanup-platform-commands": [ ],
+    "cleanup-platform-commands": [
+        "touch -d @0 /usr/share/fonts /usr/share/fonts/*",
+        "fc-cache -rs",
+        "ldconfig -C /usr/etc/ld.so.cache"
+    ],
         / * usr libexec freedesktop-post.sh */
     "build-options" : {
         "env": {
