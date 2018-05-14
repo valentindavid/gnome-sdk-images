@@ -865,6 +865,7 @@
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",
                 "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON",
+                "-DUSE_LD_GOLD:BOOL=OFF",
                 "-DENABLE_MINIBROWSER=ON"
             ],
             "sources": [
