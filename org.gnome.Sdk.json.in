@@ -38,9 +38,8 @@
                  "/share/gtk-doc/html",
                  "/lib/systemd",
                  "*.la", "*.a"],
-    "cleanup-commands": [ "update-desktop-database",
-                          "/usr/libexec/freedesktop-post.sh"
-                        ],
+    "cleanup-commands": [ "update-desktop-database" ],
+    /* usr libexec freedesktop-post.sh */
     "cleanup-platform": [ "/share/runtime/docs",
                           "/include",
                           "/share/aclocal",
@@ -49,11 +48,9 @@
                           "/share/gir-1.0",
                           "/share/vala"
                         ],
-    "cleanup-platform-commands": [  "/usr/libexec/freedesktop-post.sh" ],
+    "cleanup-platform-commands": [ ],
+        / * usr libexec freedesktop-post.sh */
     "build-options" : {
-        "cflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
-        "cxxflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
-        "ldflags": "-fstack-protector-strong -Wl,-z,relro,-z,now",
         "env": {
             "V": "1"
         }
@@ -124,9 +121,9 @@
         {
             "name": "gobject-introspection",
             "config-opts": ["--disable-static" ],
-            "ensure-writable": [ "/lib/gobject-introspection/giscanner/*.pyc",
-                                 "/lib/gobject-introspection/giscanner/*/*.pyc" ],
-            "cleanup-platform": ["/lib/gobject-introspection/giscanner",
+            "ensure-writable": [ "/lib/*/gobject-introspection/giscanner/*.pyc",
+                                 "/lib/*/gobject-introspection/giscanner/*/*.pyc" ],
+            "cleanup-platform": ["/lib/*/gobject-introspection/giscanner",
                                  "/share/gobject-introspection/giscanner",
                                  "/bin"],
             "sources": [
@@ -348,7 +345,7 @@
             "name": "gdk-pixbuf",
             "buildsystem": "meson",
             "ensure-writable": [
-                "/lib/gdk-pixbuf-2.0/*/loaders.cache",
+                "/lib/*/gdk-pixbuf-2.0/*/loaders.cache",
                 "/share/locale/*/LC_MESSAGES/gdk-pixbuf*.mo",
                 "/share/runtime/locale/*/share/*/LC_MESSAGES/gdk-pixbuf*.mo"
             ],
@@ -380,7 +377,7 @@
         {
             "name": "librsvg",
             "config-opts": ["--disable-static"],
-            "ensure-writable": ["/lib/gdk-pixbuf-2.0/*/loaders.cache"],
+            "ensure-writable": ["/lib/*/gdk-pixbuf-2.0/*/loaders.cache"],
             "sources": [
                 {
                     "type": "git",
@@ -416,7 +413,7 @@
                 "/bin/gtk-builder-tool",
                 "/bin/gtk-encode-symbolic-svg"
             ],
-            "ensure-writable": ["/lib/gtk-3.0/*/immodules.cache"],
+            "ensure-writable": ["/lib/*/gtk-3.0/*/immodules.cache"],
             "sources": [
                 {
                     "type": "git",
@@ -672,8 +669,8 @@
                 {
                     "type": "shell",
                     "commands": [
-                        "cp -f /usr/share/gnu-config/config.sub .",
-                        "cp -f /usr/share/gnu-config/config.guess ."
+                        "cp -f /usr/share/automake-1.15/config.sub .",
+                        "cp -f /usr/share/automake-1.15/config.guess ."
                     ]
                 }
             ]
@@ -735,7 +732,7 @@
             ],
             "post-install": [
                 "cp -p js/src/js-config.h /usr/include/mozjs-52",
-                "rm /usr/lib/libjs_static.ajs"
+                "rm /usr/lib/*/libjs_static.ajs"
             ]
         },
         {
