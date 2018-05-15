@@ -28,7 +28,7 @@
     },
     "finish-args": [
         "--env=GI_TYPELIB_PATH=/app/lib/girepository-1.0",
-        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:/usr/lib/gstreamer-1.0",
+        "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0:/usr/lib/@SDK_ARCH@-linux-gnu/extensions/gstreamer-1.0",
         "--env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share",
         "--sdk=org.gnome.Sdk//@@SDK_BRANCH@@",
         "--runtime=org.gnome.Platform//@@SDK_BRANCH@@"
@@ -450,8 +450,8 @@
                 }
             ],
             "build-commands": [
-                /* We delete all the 1.10 plugins to avoid version mismatches with renamed or removed plugins */
-                "rm -rf /usr/lib/gstreamer-1.0"
+                /* We delete all the overlapping freedesktop SDK plugins to avoid version mismatches with renamed or removed plugins */
+                "rm -rf /usr/lib/*/gstreamer-1.0"
             ]
         },
         {
