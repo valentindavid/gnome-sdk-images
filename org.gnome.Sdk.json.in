@@ -730,7 +730,6 @@
                               "--with-system-zlib",
                               "--without-system-icu",
                               "--with-intl-api",
-                              "--disable-gold",
                               "AUTOCONF=autoconf"],
             "subdir": "js/src",
             "sources": [
