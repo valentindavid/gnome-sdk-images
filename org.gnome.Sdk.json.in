@@ -186,7 +186,6 @@
             "name": "vala",
             "cleanup-platform": [ "*" ],
             "config-opts": [ "--enable-vapigen", "--enable-unversioned" ],
-            "rm-configure": true,
             "sources": [
                 {
                     "type": "git",
