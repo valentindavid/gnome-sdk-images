@@ -190,7 +190,7 @@
                 {
                     "type": "git",
                     "url": "https://git.gnome.org/browse/vala",
-                    "branch": "0.36"
+                    "branch": "0.40"
                 }
             ]
         },
