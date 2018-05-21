@@ -877,8 +877,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.21.1.tar.xz",
-                    "sha256": "988e29a78a094968bbec1ccffc8bea00af4048893c0db966046ad431b402ad50"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.21.2.tar.xz",
+                    "sha256": "39eebeccc1d4de94a6750997ef52068308e31dc1de29a4537651df07d8067c9c"
                 }
             ]
         },
