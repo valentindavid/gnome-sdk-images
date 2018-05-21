@@ -327,6 +327,10 @@
         {
             "name": "atk",
             "buildsystem": "meson",
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/atk10.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/atk10.mo"
+            ],
             "sources": [
                 {
                     "type": "git",
