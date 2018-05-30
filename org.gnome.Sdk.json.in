@@ -71,7 +71,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gnome-common"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-common.git"
                 }
             ]
         },
@@ -81,7 +81,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/yelp-xsl"
+                    "url": "https://gitlab.gnome.org/GNOME/yelp-xsl.git"
                 }
             ]
         },
@@ -91,7 +91,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/yelp-tools"
+                    "url": "https://gitlab.gnome.org/GNOME/yelp-tools.git"
                 }
             ]
         },
@@ -147,7 +147,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gsettings-desktop-schemas"
+                    "url": "https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git"
                 }
             ]
         },
@@ -161,7 +161,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/glib-networking"
+                    "url": "https://gitlab.gnome.org/GNOME/glib-networking.git"
                 }
             ]
         },
@@ -178,7 +178,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/vala-bootstrap"
+                    "url": "https://gitlab.gnome.org/GNOME/vala-bootstrap.git"
                 }
             ]
         },
@@ -189,7 +189,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/vala",
+                    "url": "https://gitlab.gnome.org/GNOME/vala.git",
                     "branch": "0.40"
                 },
                 {
@@ -205,7 +205,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/dconf"
+                    "url": "https://gitlab.gnome.org/GNOME/dconf.git"
                 },
                 {
                     "type": "patch",
@@ -229,7 +229,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/libsoup"
+                    "url": "https://gitlab.gnome.org/GNOME/libsoup.git"
                 }
             ]
         },
@@ -320,7 +320,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/pango"
+                    "url": "https://gitlab.gnome.org/GNOME/pango.git"
                 }
             ]
         },
@@ -334,7 +334,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/atk"
+                    "url": "https://gitlab.gnome.org/GNOME/atk.git"
                 }
             ]
         },
@@ -372,7 +372,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gdk-pixbuf"
+                    "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git"
                 },
                 {
                     "type": "shell",
@@ -387,7 +387,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/libcroco"
+                    "url": "https://gitlab.gnome.org/GNOME/libcroco.git"
                 }
             ]
         },
@@ -444,7 +444,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/adwaita-icon-theme"
+                    "url": "https://gitlab.gnome.org/GNOME/adwaita-icon-theme.git"
                 }
             ]
         },
@@ -497,7 +497,7 @@
                 {
                     "type": "git",
                     "branch": "cogl-1.22",
-                    "url": "https://git.gnome.org/browse/cogl"
+                    "url": "https://gitlab.gnome.org/GNOME/cogl.git"
                 }
             ]
         },
@@ -509,7 +509,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/clutter"
+                    "url": "https://gitlab.gnome.org/GNOME/clutter.git"
                 }
             ]
         },
@@ -518,7 +518,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/clutter-gst",
+                    "url": "https://gitlab.gnome.org/GNOME/clutter-gst.git",
                     "branch": "clutter-gst-3.0"
                 }
             ]
@@ -528,7 +528,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/clutter-gtk"
+                    "url": "https://gitlab.gnome.org/GNOME/clutter-gtk.git"
                 }
             ]
         },
@@ -627,7 +627,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/libsecret"
+                    "url": "https://gitlab.gnome.org/GNOME/libsecret.git"
                 }
             ]
         },
@@ -637,7 +637,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/libnotify"
+                    "url": "https://gitlab.gnome.org/GNOME/libnotify.git"
                 }
             ]
         },
@@ -670,7 +670,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gvfs"
+                    "url": "https://gitlab.gnome.org/GNOME/gvfs.git"
                 }
             ]
         },
@@ -702,7 +702,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gcab"
+                    "url": "https://gitlab.gnome.org/GNOME/gcab.git"
                 }
             ]
         },
@@ -809,7 +809,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/vte"
+                    "url": "https://gitlab.gnome.org/GNOME/vte.git"
                 }
             ]
         },
@@ -887,7 +887,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/yelp"
+                    "url": "https://gitlab.gnome.org/GNOME/yelp.git"
                 },
                 {
                     "type": "patch",
@@ -946,7 +946,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gcr"
+                    "url": "https://gitlab.gnome.org/GNOME/gcr.git"
                 }
             ]
         },
