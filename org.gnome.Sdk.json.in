@@ -340,6 +340,7 @@
         },
         {
             "name": "at-spi2-core",
+            "config-opts": [ "--disable-gtk-doc" ],
             "sources": [
                 {
                     "type": "archive",
