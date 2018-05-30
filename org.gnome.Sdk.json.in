@@ -178,7 +178,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/vala-bootstrap.git"
+                    "url": "https://gitlab.gnome.org/Archive/vala-bootstrap.git"
                 }
             ]
         },
