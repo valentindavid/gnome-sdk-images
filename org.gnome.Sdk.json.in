@@ -695,6 +695,7 @@
         {
             "name": "gcab",
             "buildsystem": "meson",
+            "config-opts": ["-Ddocs=false"],
             "ensure-writable": [
                 "/share/locale/*/LC_MESSAGES/gcab.mo",
                 "/share/runtime/locale/*/share/*/LC_MESSAGES/gcab.mo"
