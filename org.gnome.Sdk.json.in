@@ -340,22 +340,21 @@
         },
         {
             "name": "at-spi2-core",
-            "config-opts": [ "--disable-gtk-doc" ],
+            "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/at-spi2-core/2.26/at-spi2-core-2.26.2.tar.xz",
-                    "sha256": "c80e0cdf5e3d713400315b63c7deffa561032a6c37289211d8afcfaa267c2615"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/at-spi2-core.git"
                 }
             ]
         },
         {
             "name": "at-spi2-atk",
+            "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/at-spi2-atk/2.26/at-spi2-atk-2.26.1.tar.xz",
-                    "sha256": "b4f0c27b61dbffba7a5b5ba2ff88c8cee10ff8dac774fa5b79ce906853623b75"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/at-spi2-atk.git"
                 }
             ]
         },
