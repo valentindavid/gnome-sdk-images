@@ -955,7 +955,7 @@
             "name": "ibus",
             "config-opts": ["--disable-xim", "--disable-static", "--disable-dconf", "--disable-schemas-compile",
                             "--disable-setup", "--disable-ui", "--disable-engine", "--disable-libnotify", "--disable-emoji-dict",
-                            "--disable-appindicator", "--disable-tests"],
+                            "--disable-appindicator", "--disable-tests", "--disable-gtk-doc"],
             "cleanup": [
                 "/bin", "/libexec", "/share/bash-completion", "/share/dbus-1",
                 "/share/icons", "/share/man", "/share/ibus" ],
