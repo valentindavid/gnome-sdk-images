@@ -393,7 +393,7 @@
         },
         {
             "name": "librsvg",
-            "config-opts": ["--disable-static"],
+            "config-opts": ["--disable-static", "--enable-vala"],
             "ensure-writable": ["/lib/*/gdk-pixbuf-2.0/*/loaders.cache"],
             "sources": [
                 {
