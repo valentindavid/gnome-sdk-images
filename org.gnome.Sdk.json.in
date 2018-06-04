@@ -971,6 +971,10 @@
                 {
                     "type": "patch",
                     "path": "ibus-portal.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "ibus-disable-docs.patch"
                 }
             ]
         },

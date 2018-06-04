@@ -1,0 +1,42 @@
+From 638511fbd00cead64eaeb360f3739ee12695161d Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@igalia.com>
+Date: Mon, 4 Jun 2018 15:24:23 -0500
+Subject: [PATCH] Attempt to disable doc build
+
+ibus ignores its own --disable-gtk-doc flag and it is failing:
+
+Traceback (most recent call last):
+  File "/usr/bin/gtkdoc-rebase", line 56, in <module>
+    sys.exit(rebase.run(options))
+  File "/usr/share/gtk-doc/python/gtkdoc/rebase.py", line 67, in run
+    glib_dir = common.GetModuleDocDir('glib-2.0')
+  File "/usr/share/gtk-doc/python/gtkdoc/common.py", line 140, in GetModuleDocDir
+    path = subprocess.check_output([config.pkg_config, '--variable=prefix', module_name], universal_newlines=True)
+  File "/usr/lib/python3.6/subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.6/subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+---
+ Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index f703d4c6..22fe3881 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -54,7 +54,6 @@ SUBDIRS = \
+ 	data \
+ 	m4 \
+ 	po \
+-	docs \
+ 	$(ENGINE_DIR) \
+ 	$(UI_DIR) \
+ 	tools \
+-- 
+2.17.1
+
