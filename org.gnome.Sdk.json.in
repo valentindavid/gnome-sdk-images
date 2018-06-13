@@ -878,8 +878,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.21.3.tar.xz",
-                    "sha256": "d30dc877f71af260f9f7ce0a75544ee9cc38747b3889023bf7ff4c83e8b2b8dd"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.21.4.tar.xz",
+                    "sha256": "59f4359ace702ecaa92b975666c1bcde3858258909b047e7675ce3807efdd1e7"
                 }
             ]
         },
