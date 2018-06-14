@@ -195,6 +195,11 @@
                 {
                     "type": "patch",
                     "path": "vala-no-valadoc.patch"
+                },
+                {
+                    "type": "script",
+                    "commands": [ "autoreconf -v" ],
+                    "dest-filename": "autogen.sh"
                 }
             ]
         },
