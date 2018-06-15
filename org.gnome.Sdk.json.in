@@ -891,6 +891,7 @@
         },
         {
             "name": "yelp",
+            "config-opts": ["--disable-Werror"],
             "sources": [
                 {
                     "type": "git",
