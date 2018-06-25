@@ -352,6 +352,10 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/at-spi2-core.git"
                 }
+            ],
+            "ensure-writable": [
+                "/share/locale/*/LC_MESSAGES/at-spi2-core.mo",
+                "/share/runtime/locale/*/share/*/LC_MESSAGES/at-spi2-core.mo"
             ]
         },
         {
