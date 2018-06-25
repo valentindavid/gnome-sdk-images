@@ -28,7 +28,7 @@
     },
     "finish-args": [
         "--env=GI_TYPELIB_PATH=/app/lib/girepository-1.0",
-        "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0:/usr/lib/@@SDK_ARCH@@-linux-gnu/extensions/gstreamer-1.0",
+        "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0:/usr/@@SDK_LIB@@/extensions/gstreamer-1.0",
         "--env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share",
         "--sdk=org.gnome.Sdk//@@SDK_BRANCH@@",
         "--runtime=org.gnome.Platform//@@SDK_BRANCH@@"
@@ -827,7 +827,7 @@
             "buildsystem": "cmake",
             "config-opts": [
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib/@@SDK_ARCH@@-linux-gnu"
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/@@SDK_LIB@@"
             ],
             "sources": [
                 {
@@ -841,7 +841,7 @@
             "buildsystem": "cmake",
             "config-opts": [
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib/@@SDK_ARCH@@-linux-gnu"
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/usr/@@SDK_LIB@@"
             ],
             "sources": [
                 {
@@ -876,7 +876,7 @@
                 "-DPORT=GTK",
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
-                "-DLIB_INSTALL_DIR:PATH=/usr/lib/@@SDK_ARCH@@-linux-gnu",
+                "-DLIB_INSTALL_DIR:PATH=/usr/@@SDK_LIB@@",
                 "-DSYSCONF_INSTALL_DIR:PATH=/usr/etc",
                 "-DSHARE_INSTALL_PREFIX:PATH=/usr/share",
                 "-DINCLUDE_INSTALL_DIR:PATH=/usr/include",

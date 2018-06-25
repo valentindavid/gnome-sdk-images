@@ -10,15 +10,22 @@ REPO   ?= repo
 SDK_BRANCH=master
 SDK_RUNTIME_VERSION=unstable
 
+ifeq ($(ARCH),arm)
+LIB=lib/arm-linux-gnueabihf
+else
+LIB=lib/$(ARCH)-linux-gnu
+endif
+
 # Canned recipe for generating metadata
 SUBST_FILES=org.gnome.Sdk.json os-release issue issue.net org.gnome.Platform.appdata.xml org.gnome.Sdk.appdata.xml
 define subst-metadata
 	@echo -n "Generating files: ${SUBST_FILES}... ";
-	@for file in ${SUBST_FILES}; do 					\
-	  file_source=$${file}.in; 						\
-	  sed -e 's/@@SDK_ARCH@@/${ARCH}/g' 					\
-	      -e 's/@@SDK_BRANCH@@/${SDK_BRANCH}/g' 				\
-	      -e 's/@@SDK_RUNTIME_VERSION@@/${SDK_RUNTIME_VERSION}/g' 		\
+	@for file in ${SUBST_FILES}; do						\
+	  file_source=$${file}.in;						\
+	  sed -e 's/@@SDK_ARCH@@/${ARCH}/g'					\
+	      -e 's/@@SDK_BRANCH@@/${SDK_BRANCH}/g'				\
+	      -e 's/@@SDK_RUNTIME_VERSION@@/${SDK_RUNTIME_VERSION}/g'		\
+	      -e 's,@@SDK_LIB@@,${LIB},g'					\
 	      $$file_source > $$file.tmp && mv $$file.tmp $$file || exit 1;	\
 	done
 	@echo "Done.";
