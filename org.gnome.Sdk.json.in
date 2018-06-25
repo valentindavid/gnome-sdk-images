@@ -473,7 +473,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.xiph.org/opus.git"
+                    "url": "https://git.xiph.org/opus.git",
+		    "disable-shallow-clone": true
                 }
             ]
         },
@@ -623,7 +624,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "http://git.0pointer.net/clone/libcanberra.git" /* No HTTPS unfortunately */
+                    "url": "http://git.0pointer.net/clone/libcanberra.git", /* No HTTPS unfortunately */
+		    "disable-shallow-clone": true
                 }
             ]
         },
@@ -796,7 +798,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.22.tar.gz",
+                    "url": "https://downloads.sourceforge.net/project/pcre/pcre2/10.22/pcre2-10.22.tar.gz",
                     "sha256": "7627f93f2763ee6e11ac58558d8cfbf29e1070757b45571c0ba30ce9e096505c"
                 }
             ]
